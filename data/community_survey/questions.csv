@@ -1,141 +1,141 @@
-question_id,question
-StartDate,Start Date
-EndDate,End Date
-Status,Response Type
-Progress,Progress
-Duration (in seconds),Duration (in seconds)
-Finished,Finished
-RecordedDate,Recorded Date
-ResponseId,Response ID
-DistributionChannel,Distribution Channel
-UserLanguage,User Language
-Q_RecaptchaScore,Q_RecaptchaScore
-Q_RelevantIDDuplicate,Q_RelevantIDDuplicate
-Q_RelevantIDDuplicateScore,Q_RelevantIDDuplicateScore
-Q_RelevantIDFraudScore,Q_RelevantIDFraudScore
-Q_RelevantIDLastStartDate,Q_RelevantIDLastStartDate
-CQ1,I am age 18 or older.
-CQ2,I have read and understand the information above.
-CQ3,I want to participate in this research and continue with the survey.
-ELQ1,How many years of experience do you have using Rust?
-ELQ2,"Have you written, edited, read, audited, or engaged with unsafe Rust code in any way?"
-BQ1,How many years have you engaged with programming or the field of software engineering at-large? This includes acting in a professional capacity and as a hobby.
-BQ2,How many years of experience do you have using C?
-BQ3,How many years of experience do you have using C++?
-BQ4,How frequently do you engage with unsafe Rust code in any way?
-BQ5,Have you ever committed unsafe Rust code to a public GitHub repository?
-BQ6,Do you regularly write new Rust code or edit existing Rust code within an unsafe block or function?
-BQ7,How frequently do you write new Rust code or edit existing Rust code within an unsafe block or function?
-DMQ1,Which of the following types of applications have you developed or contributed to in any capacity using any programming language? - Selected Choice
-DMQ1_15_TEXT,Which of the following types of applications have you developed or contributed to in any capacity using any programming language? - Other - Text
-DMQ2,Which of the following types of applications have you developed or contributed in any capacity using Rust? - Selected Choice
-DMQ2_15_TEXT,Which of the following types of applications have you developed or contributed in any capacity using Rust? - Other - Text
-DMQ3,Have you rewritten part or all of an application in Rust that was originally written in another language?
-DMQ4,Have you authored or regularly contributed to a Rust crate that is published on crates.io?
-DMQ5,Have you authored or regularly contributed to a Rust crate not published on crates.io?
-DMQ6,"When you first started using Rust, was it easy or difficult to write code that passed the borrow checker?"
-UFQ1,Which of the following Rust types have you used in an unsafe context for any purpose? - Selected Choice
-UFQ1_13_TEXT,Which of the following Rust types have you used in an unsafe context for any purpose? - Other - Text
-UFQ2,Which of the following unsafe Rust features have you used? - Selected Choice
-UFQ2_13_TEXT,Which of the following unsafe Rust features have you used? - Other - Text
-UFQ3,Have you contributed to a Rust crate that is designed to be used from at least one other language?
-USCQ1,"When you choose to use UnsafeCell, how often are you certain that it is necessary to avoid undefined behavior?"
-CUFQ1,"When you use an unsafe API, how often do you look for documentation to ensure that you meet all of its requirements for safety and correctness?"
-CUFQ2,"When you use an unsafe API, how often do you insert runtime checks to ensure that you meet its requirements for safety and correctness?"
-ITQ1,Which of the following types of intrinsics have you used in Rust applications? - Selected Choice
-ITQ1_5_TEXT,Which of the following types of intrinsics have you used in Rust applications? - Other - Text
-ITQ2,"Do you use runtime checks in Rust applications, such as the is_x86_feature_detected! macro, to determine when certain hardware-specific features are supported?"
-MDMUQ1,"In Rust, how often is your use of ManuallyDrop associated with your use of MaybeUninit?"
-BXQ1,"According to Rust's current semantics, if you re-wrap a raw pointer as a Box using Box::from_raw, and then you move the Box, the raw pointer becomes invalid. Has this caused problems or architectural challenges in the applications that you have contributed to?"
-BXQ2,Have you ever encountered memory leaks due to leaking a raw pointer using Box::into_raw() and then forgetting to re-wrap it using Box::from_raw()?
-WUQ1,Think about the situations where you have typically used unsafe. Which of the following reasons have motivated you to do so? - Selected Choice
-WUQ1_5_TEXT,Think about the situations where you have typically used unsafe. Which of the following reasons have motivated you to do so? - Other - Text
-WUNQ1,Which of the following unsafe features have you used because you were not aware of a safe alternative? - Selected Choice
-WUNQ1_13_TEXT,Which of the following unsafe features have you used because you were not aware of a safe alternative? - Other - Text
-WUNQ2,"When you feel that you have no clear alternative other than using unsafe, how often are you certain that it would be completely impossible to accomplish this task using a safe design pattern?"
-WUNQ3,Which of the following Rust types have you used because you were not aware of a safe alternative? - Selected Choice
-WUNQ3_5_TEXT,Which of the following Rust types have you used because you were not aware of a safe alternative? - Other - Text
-WUEQ1,Which of the following unsafe features have you used because it was easier to implement or more ergonomic than a safe alternative? - Selected Choice
-WUEQ1_13_TEXT,Which of the following unsafe features have you used because it was easier to implement or more ergonomic than a safe alternative? - Other - Text
-WUEQ2,Which of the following Rust types have you used because it was easier to implement or more ergonomic than a safe alternative? - Selected Choice
-WUEQ2_5_TEXT,Which of the following Rust types have you used because it was easier to implement or more ergonomic than a safe alternative? - Other - Text
-WUPQ1,Which of the following unsafe features have you used because it performed faster or was more space-efficient than a safe alternative? - Selected Choice
-WUPQ1_13_TEXT,Which of the following unsafe features have you used because it performed faster or was more space-efficient than a safe alternative? - Other - Text
-WUPQ2,Which of the following Rust types have you used because it performed faster or was more space efficient than a safe alternative? - Selected Choice
-WUPQ2_5_TEXT,Which of the following Rust types have you used because it performed faster or was more space efficient than a safe alternative? - Other - Text
-WUPQ3,"When you choose to use unsafe because it performs faster or is more space efficient, how often do you measure the difference?"
-WUPQ4,"When you use unsafe because it performs faster or is more space efficient, are you typically introducing small-scale optimizations into existing applications, or are you designing large-scale abstractions that are purpose-built for performance? - Selected Choice"
-WUPQ4_18_TEXT,"When you use unsafe because it performs faster or is more space efficient, are you typically introducing small-scale optimizations into existing applications, or are you designing large-scale abstractions that are purpose-built for performance? - Other - Text"
-PVSQ1,"You are writing an arbitrary Rust application, and you have the opportunity to increase its speed or space-efficiency using unsafe code. You are certain that the unsafe code is sound, and your test cases pass Miri, but the performance increase is marginal. Which would you choose:"
-PVSQ2,"You are writing a Rust crate and you have the opportunity to increase its speed or space-efficiency using unsafe code. You are certain that the unsafe code is sound, and your test cases pass Miri, but the performance increase is marginal. Which would you choose:"
-LMUQ1,"If another Rust developer at your skill level selected a random unsafe block or function from code that you have written, would it be easy or difficult for them to understand?"
-LMUQ2,Select each of the following features or attributes  that you have chosen to enable in a Rust module.
-LMUQ3,How often do you refactor Rust applications to remove unsafe code?
-LMUQ4,How often do you choose to avoid using an unsafe API when a safe alternative exists?
-ENQ1,Have you exposed an unsafe API to other Rust developers?
-ENQ2,Have you exposed a safe API to other Rust developers that encapsulates unsafe code?
-EUAQ1,Which of the following reasons have motivated you to expose an unsafe API to users? - Selected Choice
-EUAQ1_4_TEXT,Which of the following reasons have motivated you to expose an unsafe API to users? - Other - Text
-EUAQ2,"When you expose an unsafe API, how often are its users responsible for meeting certain requirements for correctness and safety?"
-EUAIQ1,"When you expose an unsafe API to users, and it is their responsibility to ensure that certain requirements are met, how often do you document these requirements?"
-EUAIQ2,"When you expose an unsafe API to other users, and it is their responsibility to ensure that certain requirements are met, how often do you include runtime checks for these requirements?"
-ESAQ1,"When you expose a safe API for unsafe code, how often do you include runtime checks to ensure that its requirements for correctness and safety are met?"
-ESAQ2,"When you expose a safe API for unsafe code, how often are all of its requirements for correctness and safety satisfied by the properties of Rust's type system?"
-FFIBQ1,"When you call foreign functions from Rust or write Rust bindings to foreign functions, which languages are these functions written in? - Selected Choice"
-FFIBQ1_18_TEXT,"When you call foreign functions from Rust or write Rust bindings to foreign functions, which languages are these functions written in? - Other - Text"
-FFIBQ2,Do you write or generate bindings to foreign functions?
-FFIBQ3,Do you trust FFI bindings that are written by hand?
-FFIBQ4,Do you trust FFI bindings that are generated by a tool?
-FFIBQ5,Have you ever encountered incorrect FFI bindings in a Rust application?
-FFIBQ6,"Have these incorrect bindings typically been written manually, generated by a tool, or both?"
-FFIMMQ1,"Select each of the following memory container types that you have used to allocate memory for a foreign function call. This process includes creating the container, exposing it as a raw pointer using into_raw(), and then passing it into a foreign function. - Selected Choice"
-FFIMMQ1_4_TEXT,"Select each of the following memory container types that you have used to allocate memory for a foreign function call. This process includes creating the container, exposing it as a raw pointer using into_raw(), and then passing it into a foreign function. - Other - Text"
-FFIMMQ3,"When you receive a raw pointer to memory allocated by an FFI call, how often do you store it as an UnsafeCell?"
-FFIMMQ4,"Do you pass Rust's abstract data types (structs, enums) by value across FFI boundaries?"
-FFIMMQ5,"Do you convert raw pointers to memory allocated by FFI calls into safe references, such as &T or &mut T?"
-FFIMMQ6,"How often do you intentionally avoid passing Rust's abstract data types (structs, enums) by value across FFI boundaries?"
-FFIMMQ7,"How often do you intentionally avoid converting raw pointers to memory allocated by FFI calls into safe references, such as &T or &mut T?"
-FFIBAQ1,Which of the following binding generation tools have you used? - Selected Choice
-FFIBAQ1_9_TEXT,Which of the following binding generation tools have you used? - Other - Text
-FFIBAQ2,"Do you typically generate bindings locally and check them in, or do you generate them as a CI step? - Selected Choice"
-FFIBAQ2_17_TEXT,"Do you typically generate bindings locally and check them in, or do you generate them as a CI step? - Other - Text"
-FFIBAQ3,Has it typically been difficult or easy to configure wasm-bindgen?
-VQ1,Which of the following formal methods tools have you used with Rust? - Selected Choice
-VQ1_6_TEXT,Which of the following formal methods tools have you used with Rust? - Other - Text
-VQ2,"Which of the following sanitizers, fuzzers, and dynamic analysis tools have you used for Rust applications? - Selected Choice"
-VQ2_14_TEXT,"Which of the following sanitizers, fuzzers, and dynamic analysis tools have you used for Rust applications? - Other - Text"
-VQ4,How frequently do you use a debugger with a Rust application?
-VQ5,Which of the following types of bugs and undefined behaviors have you encountered in a Rust application and were caused by unsafe code? - Selected Choice
-VQ5_25_TEXT,Which of the following types of bugs and undefined behaviors have you encountered in a Rust application and were caused by unsafe code? - Other - Text
-VQ6,How often do you write tests for Rust applications that use unsafe?
-VQ7,How often do you audit your dependencies' use of unsafe?
-VQ8,Select each of the following tools that you use to audit your dependencies.
-VQ9,One of your options for a dependency has an unsafe API. Are you likely or unlikely to avoid choosing this dependency if other options have a safe API?
-VMQ1,Which of the following issues have deterred you from using Miri to test a Rust application? - Selected Choice
-VMQ1_6_TEXT,Which of the following issues have deterred you from using Miri to test a Rust application? - Other - Text
-VMQ2,How often do you run test cases in Miri?
-VMQ3,Which of the following bugs has Miri detected in applications that you have contributed to? - Selected Choice
-VMQ3_9_TEXT,Which of the following bugs has Miri detected in applications that you have contributed to? - Other - Text
-VMQ4,"When Miri detects a borrowing violation in your code, has it usually been easy or difficult to fix?"
-CCQ1,Select each of the following online communities where you have posted asking for advice related to either undefined behavior or the correct use of unsafe code. - Selected Choice
-CCQ1_9_TEXT,Select each of the following online communities where you have posted asking for advice related to either undefined behavior or the correct use of unsafe code. - Other - Text
-CCQ2,How do you perceive that the Rust community views unsafe code in general?
-CCQ3,How do you perceive that the Rust community views the type of unsafe code that you write?
-CCQ4,How often is the Rust community’s guidance and documentation adequate for you to know how to use unsafe correctly?
-CCQ5,"Do you agree or disagree with the following statement:""No documentation is better than incorrect documentation."""
-DQ1,What is your age?
-DQ2,What is your highest completed level of education?
-DQ3,What is your gender? - Selected Choice
-DQ3_6_TEXT,What is your gender? - Prefer to self-describe - Text
-DQ4,Select each of the affiliations that best describes your role as a Rust developer. - Selected Choice
-DQ4_6_TEXT,Select each of the affiliations that best describes your role as a Rust developer. - Other - Text
-DQ5,Where did you first hear about this survey? - Selected Choice
-DQ5_10_TEXT,Where did you first hear about this survey? - Other - Text
-PICQ1,"Do you wish to be entered into a drawing for a $250 gift card to Amazon, Starbucks, or Target? To be eligible, you will need to provide a valid username from GitHub or the Rust Programming Language Forums and an email address. You account must have activity prior to the start date of the survey."
-PICQ2,Are you open to being contacted for follow-up surveys or interviews?
-PICQ3,Did you participate in our initial interview study this spring?
-PICNQ1,"Would you be open to providing your name and email address so that we can associate your responses to this survey with your data from the interview study? By selecting 'Yes,' you consent to be contacted for clarification if the name and email address you provided do not match earlier data."
-PIDQ1,Copy and paste a link to your profile page on either GitHub or the Rust Programming Language Forums.
-PIDQ2,Which type of gift card would you prefer?
-PIEQ1,What is your name?
-PIEQ2,What is your email?
+rq,type,optional,gated_by,question_id,question
+,meta,no,,StartDate,Start Date
+,meta,no,,EndDate,End Date
+,meta,no,,Status,Response Type
+,meta,no,,Progress,Progress
+,meta,no,,Duration (in seconds),Duration (in seconds)
+,meta,no,,Finished,Finished
+,meta,no,,RecordedDate,Recorded Date
+,meta,no,,ResponseId,Response ID
+,meta,no,,DistributionChannel,Distribution Channel
+0,meta,no,,UserLanguage,User Language
+,meta,no,,Q_RecaptchaScore,Q_RecaptchaScore
+,meta,no,,Q_RelevantIDDuplicate,Q_RelevantIDDuplicate
+,meta,no,,Q_RelevantIDDuplicateScore,Q_RelevantIDDuplicateScore
+,meta,no,,Q_RelevantIDFraudScore,Q_RelevantIDFraudScore
+,meta,no,,Q_RelevantIDLastStartDate,Q_RelevantIDLastStartDate
+,consent,no,,CQ1,I am age 18 or older.
+,consent,no,,CQ2,I have read and understand the information above.
+,consent,no,,CQ3,I want to participate in this research and continue with the survey.
+,short_answer,no,,ELQ1,How many years of experience do you have using Rust?
+,yn,no,,ELQ2,"Have you written, edited, read, audited, or engaged with unsafe Rust code in any way?"
+,short_answer,no,,BQ1,How many years have you engaged with programming or the field of software engineering at-large? This includes acting in a professional capacity and as a hobby.
+,short_answer,no,,BQ2,How many years of experience do you have using C?
+,short_answer,no,,BQ3,How many years of experience do you have using C++?
+0,freq_time,no,,BQ4,How frequently do you engage with unsafe Rust code in any way?
+,yn,no,,BQ5,Have you ever committed unsafe Rust code to a public GitHub repository?
+,yn,no,,BQ6,Do you regularly write new Rust code or edit existing Rust code within an unsafe block or function?
+0,freq_time,no,,BQ7,How frequently do you write new Rust code or edit existing Rust code within an unsafe block or function?
+,mc,no,,DMQ1,Which of the following types of applications have you developed or contributed to in any capacity using any programming language? - Selected Choice
+,mc,no,,DMQ1_15_TEXT,Which of the following types of applications have you developed or contributed to in any capacity using any programming language? - Other - Text
+,mc,no,,DMQ2,Which of the following types of applications have you developed or contributed in any capacity using Rust? - Selected Choice
+,mc,no,,DMQ2_15_TEXT,Which of the following types of applications have you developed or contributed in any capacity using Rust? - Other - Text
+0,yn,no,,DMQ3,Have you rewritten part or all of an application in Rust that was originally written in another language?
+0,yn,no,,DMQ4,Have you authored or regularly contributed to a Rust crate that is published on crates.io?
+0,yn,no,,DMQ5,Have you authored or regularly contributed to a Rust crate not published on crates.io?
+3,ease,no,,DMQ6,"When you first started using Rust, was it easy or difficult to write code that passed the borrow checker?"
+,mc,yes,,UFQ1,Which of the following Rust types have you used in an unsafe context for any purpose? - Selected Choice
+,mc,yes,,UFQ1_13_TEXT,Which of the following Rust types have you used in an unsafe context for any purpose? - Other - Text
+,mc,no,,UFQ2,Which of the following unsafe Rust features have you used? - Selected Choice
+,mc,no,,UFQ2_13_TEXT,Which of the following unsafe Rust features have you used? - Other - Text
+1,yn,no,,UFQ3,Have you contributed to a Rust crate that is designed to be used from at least one other language?
+4,freq,no,,USCQ1,"When you choose to use UnsafeCell, how often are you certain that it is necessary to avoid undefined behavior?"
+4,freq,no,,CUFQ1,"When you use an unsafe API, how often do you look for documentation to ensure that you meet all of its requirements for safety and correctness?"
+4,freq,no,,CUFQ2,"When you use an unsafe API, how often do you insert runtime checks to ensure that you meet its requirements for safety and correctness?"
+,mc,yes,,ITQ1,Which of the following types of intrinsics have you used in Rust applications? - Selected Choice
+,mc,no,,ITQ1_5_TEXT,Which of the following types of intrinsics have you used in Rust applications? - Other - Text
+4,yn,no,,ITQ2,"Do you use runtime checks in Rust applications, such as the is_x86_feature_detected! macro, to determine when certain hardware-specific features are supported?"
+4,freq_unsure,no,,MDMUQ1,"In Rust, how often is your use of ManuallyDrop associated with your use of MaybeUninit?"
+4,yn,no,,BXQ1,"According to Rust's current semantics, if you re-wrap a raw pointer as a Box using Box::from_raw, and then you move the Box, the raw pointer becomes invalid. Has this caused problems or architectural challenges in the applications that you have contributed to?"
+4,yn,no,,BXQ2,Have you ever encountered memory leaks due to leaking a raw pointer using Box::into_raw() and then forgetting to re-wrap it using Box::from_raw()?
+,mc,yes,,WUQ1,Think about the situations where you have typically used unsafe. Which of the following reasons have motivated you to do so? - Selected Choice
+,mc,yes,,WUQ1_5_TEXT,Think about the situations where you have typically used unsafe. Which of the following reasons have motivated you to do so? - Other - Text
+,mc,yes,,WUNQ1,Which of the following unsafe features have you used because you were not aware of a safe alternative? - Selected Choice
+,mc,yes,,WUNQ1_13_TEXT,Which of the following unsafe features have you used because you were not aware of a safe alternative? - Other - Text
+3,freq_unsure,no,,WUNQ2,"When you feel that you have no clear alternative other than using unsafe, how often are you certain that it would be completely impossible to accomplish this task using a safe design pattern?"
+,mc,yes,,WUNQ3,Which of the following Rust types have you used because you were not aware of a safe alternative? - Selected Choice
+,mc,yes,,WUNQ3_5_TEXT,Which of the following Rust types have you used because you were not aware of a safe alternative? - Other - Text
+,mc,yes,,WUEQ1,Which of the following unsafe features have you used because it was easier to implement or more ergonomic than a safe alternative? - Selected Choice
+,mc,yes,,WUEQ1_13_TEXT,Which of the following unsafe features have you used because it was easier to implement or more ergonomic than a safe alternative? - Other - Text
+,mc,yes,,WUEQ2,Which of the following Rust types have you used because it was easier to implement or more ergonomic than a safe alternative? - Selected Choice
+,mc,yes,,WUEQ2_5_TEXT,Which of the following Rust types have you used because it was easier to implement or more ergonomic than a safe alternative? - Other - Text
+,mc,yes,,WUPQ1,Which of the following unsafe features have you used because it performed faster or was more space-efficient than a safe alternative? - Selected Choice
+,mc,yes,,WUPQ1_13_TEXT,Which of the following unsafe features have you used because it performed faster or was more space-efficient than a safe alternative? - Other - Text
+,mc,yes,,WUPQ2,Which of the following Rust types have you used because it performed faster or was more space efficient than a safe alternative? - Selected Choice
+,mc,yes,,WUPQ2_5_TEXT,Which of the following Rust types have you used because it performed faster or was more space efficient than a safe alternative? - Other - Text
+3,freq,no,,WUPQ3,"When you choose to use unsafe because it performs faster or is more space efficient, how often do you measure the difference?"
+,discrete,no,,WUPQ4,"When you use unsafe because it performs faster or is more space efficient, are you typically introducing small-scale optimizations into existing applications, or are you designing large-scale abstractions that are purpose-built for performance? - Selected Choice"
+,discrete,no,,WUPQ4_18_TEXT,"When you use unsafe because it performs faster or is more space efficient, are you typically introducing small-scale optimizations into existing applications, or are you designing large-scale abstractions that are purpose-built for performance? - Other - Text"
+,discrete,no,,PVSQ1,"You are writing an arbitrary Rust application, and you have the opportunity to increase its speed or space-efficiency using unsafe code. You are certain that the unsafe code is sound, and your test cases pass Miri, but the performance increase is marginal. Which would you choose:"
+,discrete,no,,PVSQ2,"You are writing a Rust crate and you have the opportunity to increase its speed or space-efficiency using unsafe code. You are certain that the unsafe code is sound, and your test cases pass Miri, but the performance increase is marginal. Which would you choose:"
+4,ease,no,,LMUQ1,"If another Rust developer at your skill level selected a random unsafe block or function from code that you have written, would it be easy or difficult for them to understand?"
+,mc,yes,,LMUQ2,Select each of the following features or attributes  that you have chosen to enable in a Rust module.
+4,freq,no,,LMUQ3,How often do you refactor Rust applications to remove unsafe code?
+4,freq,no,,LMUQ4,How often do you choose to avoid using an unsafe API when a safe alternative exists?
+4,yn,no,,ENQ1,Have you exposed an unsafe API to other Rust developers?
+4,yn,no,,ENQ2,Have you exposed a safe API to other Rust developers that encapsulates unsafe code?
+,mc,yes,,EUAQ1,Which of the following reasons have motivated you to expose an unsafe API to users? - Selected Choice
+,mc,yes,,EUAQ1_4_TEXT,Which of the following reasons have motivated you to expose an unsafe API to users? - Other - Text
+4,freq_unsure,no,,EUAQ2,"When you expose an unsafe API, how often are its users responsible for meeting certain requirements for correctness and safety?"
+4,freq,no,,EUAIQ1,"When you expose an unsafe API to users, and it is their responsibility to ensure that certain requirements are met, how often do you document these requirements?"
+4,freq,no,,EUAIQ2,"When you expose an unsafe API to other users, and it is their responsibility to ensure that certain requirements are met, how often do you include runtime checks for these requirements?"
+4,freq,no,,ESAQ1,"When you expose a safe API for unsafe code, how often do you include runtime checks to ensure that its requirements for correctness and safety are met?"
+4,freq_unsure,no,,ESAQ2,"When you expose a safe API for unsafe code, how often are all of its requirements for correctness and safety satisfied by the properties of Rust's type system?"
+,mc,yes,,FFIBQ1,"When you call foreign functions from Rust or write Rust bindings to foreign functions, which languages are these functions written in? - Selected Choice"
+,mc,yes,,FFIBQ1_18_TEXT,"When you call foreign functions from Rust or write Rust bindings to foreign functions, which languages are these functions written in? - Other - Text"
+2,yn,no,,FFIBQ2,Do you write or generate bindings to foreign functions?
+2,yes_no_grad,no,,FFIBQ3,Do you trust FFI bindings that are written by hand?
+2,yes_no_grad,no,,FFIBQ4,Do you trust FFI bindings that are generated by a tool?
+,ynu,no,,FFIBQ5,Have you ever encountered incorrect FFI bindings in a Rust application?
+,discrete,no,,FFIBQ6,"Have these incorrect bindings typically been written manually, generated by a tool, or both?"
+,mc,yes,,FFIMMQ1,"Select each of the following memory container types that you have used to allocate memory for a foreign function call. This process includes creating the container, exposing it as a raw pointer using into_raw(), and then passing it into a foreign function. - Selected Choice"
+,mc,yes,,FFIMMQ1_4_TEXT,"Select each of the following memory container types that you have used to allocate memory for a foreign function call. This process includes creating the container, exposing it as a raw pointer using into_raw(), and then passing it into a foreign function. - Other - Text"
+1,freq,no,,FFIMMQ3,"When you receive a raw pointer to memory allocated by an FFI call, how often do you store it as an UnsafeCell?"
+,ynu,no,,FFIMMQ4,"Do you pass Rust's abstract data types (structs, enums) by value across FFI boundaries?"
+,ynu,no,,FFIMMQ5,"Do you convert raw pointers to memory allocated by FFI calls into safe references, such as &T or &mut T?"
+1,freq_unsure,no,,FFIMMQ6,"How often do you intentionally avoid passing Rust's abstract data types (structs, enums) by value across FFI boundaries?"
+1,freq_unsure,no,,FFIMMQ7,"How often do you intentionally avoid converting raw pointers to memory allocated by FFI calls into safe references, such as &T or &mut T?"
+,mc,yes,,FFIBAQ1,Which of the following binding generation tools have you used? - Selected Choice
+,mc,yes,,FFIBAQ1_9_TEXT,Which of the following binding generation tools have you used? - Other - Text
+,discrete,no,,FFIBAQ2,"Do you typically generate bindings locally and check them in, or do you generate them as a CI step? - Selected Choice"
+,discrete,no,,FFIBAQ2_17_TEXT,"Do you typically generate bindings locally and check them in, or do you generate them as a CI step? - Other - Text"
+,ease,no,,FFIBAQ3,Has it typically been difficult or easy to configure wasm-bindgen?
+,mc,yes,,VQ1,Which of the following formal methods tools have you used with Rust? - Selected Choice
+,mc,yes,,VQ1_6_TEXT,Which of the following formal methods tools have you used with Rust? - Other - Text
+,mc,yes,,VQ2,"Which of the following sanitizers, fuzzers, and dynamic analysis tools have you used for Rust applications? - Selected Choice"
+,mc,yes,,VQ2_14_TEXT,"Which of the following sanitizers, fuzzers, and dynamic analysis tools have you used for Rust applications? - Other - Text"
+2,freq_time,no,,VQ4,How frequently do you use a debugger with a Rust application?
+,mc,yes,,VQ5,Which of the following types of bugs and undefined behaviors have you encountered in a Rust application and were caused by unsafe code? - Selected Choice
+,mc,yes,,VQ5_25_TEXT,Which of the following types of bugs and undefined behaviors have you encountered in a Rust application and were caused by unsafe code? - Other - Text
+2,freq,no,,VQ6,How often do you write tests for Rust applications that use unsafe?
+2,freq,no,,VQ7,How often do you audit your dependencies' use of unsafe?
+,mc,yes,,VQ8,Select each of the following tools that you use to audit your dependencies.
+4,likely,no,,VQ9,One of your options for a dependency has an unsafe API. Are you likely or unlikely to avoid choosing this dependency if other options have a safe API?
+,mc,yes,,VMQ1,Which of the following issues have deterred you from using Miri to test a Rust application? - Selected Choice
+,mc,yes,,VMQ1_6_TEXT,Which of the following issues have deterred you from using Miri to test a Rust application? - Other - Text
+2,freq,no,,VMQ2,How often do you run test cases in Miri?
+,mc,yes,,VMQ3,Which of the following bugs has Miri detected in applications that you have contributed to? - Selected Choice
+,mc,yes,,VMQ3_9_TEXT,Which of the following bugs has Miri detected in applications that you have contributed to? - Other - Text
+2,ease,no,,VMQ4,"When Miri detects a borrowing violation in your code, has it usually been easy or difficult to fix?"
+,mc,yes,,CCQ1,Select each of the following online communities where you have posted asking for advice related to either undefined behavior or the correct use of unsafe code. - Selected Choice
+,mc,yes,,CCQ1_9_TEXT,Select each of the following online communities where you have posted asking for advice related to either undefined behavior or the correct use of unsafe code. - Other - Text
+,positivity,no,,CCQ2,How do you perceive that the Rust community views unsafe code in general?
+,positivity,no,,CCQ3,How do you perceive that the Rust community views the type of unsafe code that you write?
+4,freq_unsure,no,,CCQ4,How often is the Rust community's guidance and documentation adequate for you to know how to use unsafe correctly?
+4,agree,no,,CCQ5,"Do you agree or disagree with the following statement:""No documentation is better than incorrect documentation."""
+,short_answer,no,,DQ1,What is your age?
+,short_answer,no,,DQ2,What is your highest completed level of education?
+,mc,yes,,DQ3,What is your gender? - Selected Choice
+,mc,yes,,DQ3_6_TEXT,What is your gender? - Prefer to self-describe - Text
+,mc,yes,,DQ4,Select each of the affiliations that best describes your role as a Rust developer. - Selected Choice
+,mc,yes,,DQ4_6_TEXT,Select each of the affiliations that best describes your role as a Rust developer. - Other - Text
+,mc,yes,,DQ5,Where did you first hear about this survey? - Selected Choice
+,mc,yes,,DQ5_10_TEXT,Where did you first hear about this survey? - Other - Text
+,follow-up,no,,PICQ1,"Do you wish to be entered into a drawing for a $250 gift card to Amazon, Starbucks, or Target? To be eligible, you will need to provide a valid username from GitHub or the Rust Programming Language Forums and an email address. You account must have activity prior to the start date of the survey."
+,follow-up,no,,PICQ2,Are you open to being contacted for follow-up surveys or interviews?
+,follow-up,no,,PICQ3,Did you participate in our initial interview study this spring?
+,follow-up,no,,PICNQ1,"Would you be open to providing your name and email address so that we can associate your responses to this survey with your data from the interview study? By selecting 'Yes,' you consent to be contacted for clarification if the name and email address you provided do not match earlier data."
+,follow-up,no,,PIDQ1,Copy and paste a link to your profile page on either GitHub or the Rust Programming Language Forums.
+,follow-up,no,,PIDQ2,Which type of gift card would you prefer?
+,follow-up,no,,PIEQ1,What is your name?
+,follow-up,no,,PIEQ2,What is your email?

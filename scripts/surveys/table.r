@@ -1,9 +1,54 @@
 source("scripts/surveys/base.r")
-
-if (!dir.exists("./build/tables")) {
-    dir.create("./build/tables")
+table_dir <- "./build/tables"
+if (!dir.exists(table_dir)) {
+    dir.create(table_dir)
 }
+coding_decisions <- read_csv(file.path("data/interviews/coding/decisions.csv"), show_col_types = FALSE) 
+coding_decisions_split <- coding_decisions %>%
+    mutate(Codes = str_split(Codes, ",")) %>%
+    unnest(Codes) %>%
+    mutate(Codes = trimws(Codes))
+    
+## Table of Codes and Themes
+codes <- read_csv(file.path("data/interviews/coding/codebook.csv"), show_col_types = FALSE) %>%
+    mutate(Groups = str_split(Groups, ", ")) %>%
+    unnest(Groups) %>%
+    mutate(Groups = trimws(Groups)) %>%
+    select(Code, Groups, Comment) %>%
+    filter(Groups == "Miri")
 
+## Table of Interview Participant Demographic Information 
+
+interview_duration <- read_csv(file.path("data/interviews/duration.csv"), show_col_types = FALSE) %>%
+    mutate(duration_in_minutes = round(as.numeric(duration_in_minutes), 1)) %>%
+    rename(`Duration (min.)` = duration_in_minutes)
+
+coding <- coding_decisions %>%
+    select(`Number of Codes`, `Document`) %>%
+    group_by(Document) %>% 
+    summarize(`# Codes` = sum(`Number of Codes`)) %>%
+    mutate(Document = as.numeric(str_replace(Document, "Interview P", ""))) %>%
+    rename(PID = Document)
+
+screening_survey_demo <- screening %>%
+    select(PID, PQ3, BQ1_CLEAN) %>%
+    rename(
+        `# Years Rust` = BQ1_CLEAN,
+        `Affiliation` = PQ3
+    ) %>%
+    mutate(PID = as.numeric(str_replace(PID, "P", ""))) %>%
+    mutate(`Affiliation` = str_replace_all(`Affiliation`, regex("Industry", ignore_case = TRUE), "I")) %>%
+    mutate(`Affiliation` = str_replace_all(`Affiliation`, regex("Academia", ignore_case = TRUE), "A")) %>%
+    mutate(`Affiliation` = str_replace_all(`Affiliation`, regex("Open Source", ignore_case = TRUE), "O")) %>%
+    mutate(`Affiliation` = str_replace_all(`Affiliation`, regex("Rust team", ignore_case = TRUE), "R"))
+
+survey_stats_table <- screening_survey_demo %>% 
+    full_join(interview_duration, by=c("PID")) %>%
+    full_join(coding, by=c("PID")) %>%
+    arrange(PID) %>%
+    write_csv(file.path(table_dir, "interview_participant_demographics.csv"))
+    
+## Table of reasons why developers chose to use unsafe (Community Survey Question WUQ1)
 options <- survey %>%
     filter(question_id == "WUQ1") %>%
     select(value) %>%
@@ -92,7 +137,7 @@ for (group in colnames(found)[-1]) {
 years_stats <- years_stats %>% mutate(group = str_replace_all(group, "The Rust Programming Language Community Discord", "Rust Discord"))
 years_stats <- years_stats %>% mutate(group = str_replace_all(group, "The Rust Programming Language Forums", "Rust Forums"))
 
-years_stats$summary <- paste0(years_stats$min, " - ", years_stats$max, " (", years_stats$mean, " ± ", years_stats$stdev, ")")
+years_stats$summary <- paste0(years_stats$mean, " ± ", years_stats$stdev)
 years_stats <- years_stats %>% select(-min, -max, -mean, -stdev)
 years_stats <- years_stats %>% pivot_wider(names_from = language, values_from = summary, names_sep = "_")
 
@@ -139,3 +184,4 @@ unsafe_features %>%
     table() %>%
     as.data.frame() %>%
     arrange(desc(Freq))
+

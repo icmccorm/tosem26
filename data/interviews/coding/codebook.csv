@@ -58,7 +58,7 @@ Emscripten,1,0,Tools,1,,Author 1,9/2/23,Author 1,9/5/23
 Engaging with the Rust Community,17,0,Community & Culture,1,"Reaching out to other Rust developers on the Discord, community forums, or any other public site for guidance.",Author 1,9/5/23,Author 1,9/5/23
 Exposing a Safe API,20,0,Encapsulation,1,"This developer attempted to expose an entirely safe API to users, with or without compromises for ergonomics. Essentially, this should represent the community preference for safe APIs being put into action by developers. Any notion of preference held by the Rust community should fit under community and culture, though.",Author 1,9/2/23,Author 1,9/5/23
 Exposing an Unsafe API to Users,9,0,Encapsulation,1,Whenever an unsafe API is exposed to users of a library.,Author 1,8/7/23,Author 1,8/7/23
-"○ Extensive, Non-local Unsafe",7,0,"Encapsulation, Reasoning",2,"Unsafe code that is large in scope, or difficult to reason about without relying on non-local knowledge of the application domain. The opposite of ""Local, Minimal Unsafe.""",Author 1,9/2/23,Author 1,9/3/23
+"Extensive, Non-local Unsafe",7,0,"Encapsulation, Reasoning",2,"Unsafe code that is large in scope, or difficult to reason about without relying on non-local knowledge of the application domain. The opposite of ""Local, Minimal Unsafe.""",Author 1,9/2/23,Author 1,9/3/23
 Fanboyish,4,0,Community & Culture,1,Choosing to use Rust because of a sense of emotional investment in the language and its community.,Author 1,8/8/23,Author 1,9/5/23
 Fearless Concurrency,7,0,Benefits of Rust,1,It is easy to write multithreaded applications in Rust without encountering bugs.,Author 1,8/6/23,Author 1,8/7/23
 Feature Disparity,16,0,C++ vs. Rust,1,An example of how Rust and C++ differ in language features or safety requirements.,Author 1,9/1/23,Author 1,9/5/23
@@ -92,7 +92,7 @@ Leveraging the Borrow Checker,2,0,Encapsulation,1,,Author 1,9/2/23,Author 1,9/5/
 libfuzzer,2,0,Tools,1,,Author 1,9/5/23,Author 1,9/5/23
 Limitation of Binding Tool,16,0,FFI Bindings,1,"A situation that a binding or encapsulation generation tool can't handle, or a pain point or other issue that occurs when using one.",Author 1,8/10/23,Author 1,8/10/23
 Linking Time Optimization (LTO),2,0,Tools,1,,Author 1,8/9/23,Author 1,9/3/23
-"○ Local, Minimal Unsafe",17,0,"Encapsulation, Reasoning",2,Keeping unsafe local and minimal.,Author 1,8/7/23,Author 1,9/3/23
+"Local, Minimal Unsafe",17,0,"Encapsulation, Reasoning",2,Keeping unsafe local and minimal.,Author 1,8/7/23,Author 1,9/3/23
 Logical Error,8,0,Bug Categories,1,Incorrect behavior according to a specification for an application or API.,Author 1,8/8/23,Author 1,8/8/23
 Low-Level Access,3,0,Benefits of Rust,1,Rust is useful because it provides low-level access to hardware.,Author 1,8/9/23,Author 1,8/10/23
 Macros,5,0,Encapsulation,1,Using a macro to encapsulate unsafe.,Author 1,8/8/23,Author 1,8/8/23
@@ -104,7 +104,7 @@ Memory Leaks,2,0,Bug Categories,1,Forgetting to free memory after it has been al
 Memory Leaks Aren't an Issue,2,0,Validation,1,It's easy to catch memory leaks using dynamic analysis tools.,Author 1,8/8/23,Author 1,9/5/23
 Memory Safety,12,0,Benefits of Rust,1,Rust's borrow checker provides strong static guarantees of memory safety.,Author 1,8/8/23,Author 1,8/10/23
 Memory Thrashing,0,0,Bug Categories,1,,Author 2,8/26/23,Author 1,9/5/23
-Miri doesn't support this feature,13,0,Miri,1,"Miri doesn't support a particular feature, likely inline assembly or FFI calls.",Author 1,8/6/23,Author 1,8/9/23
+Miri doesn't support this feature,13,0,Miri,1,"Miri doesn't support a particular feature, likely inline assembly or FFI.",Author 1,8/6/23,Author 1,8/9/23
 Miri found a bug,3,0,Miri,1,Miri discovered a bug in a codebase.,Author 1,9/5/23,Author 1,9/5/23
 Miri is slow,7,0,Miri,1,Miri's speed prevents it from being effective.,Author 1,8/6/23,Author 1,8/9/23
 Mismatched Bindings or Declarations,4,0,Bug Categories,1,"An FFI binding or intrinsic declaration doesn't quite match the function that's being bound. The signature is wrong in some way, like the arguments are swapped.",Author 1,8/6/23,Author 1,8/9/23
@@ -138,7 +138,7 @@ Requirements Bug,10,0,New Bug Categories,1,Bugs involving mismatched or unsatisf
 Return Pointers,3,0,FFI Memory Model,1,Passing a pointer to uninitialized memory across an FFI boundary with the expectation that it will be initialized upon return.,Author 1,8/9/23,Author 1,9/5/23
 Rewrite it in Rust,4,0,Misc,1,This participant rewrote a legacy codebase in Rust.,Author 1,8/9/23,Author 1,9/5/23
 Running tests through Miri,12,0,Miri,1,"Running the test case of a project through Miri, either as a practice or recommendation.",Author 1,8/9/23,Author 1,9/5/23
-○ Runtime Assertion,10,0,"Encapsulation, Validation",2,Merged from Assertion and Assertion in Encapsulation or API,Author 2,8/29/23,Author 1,9/5/23
+Runtime Assertion,10,0,"Encapsulation, Validation",2,Merged from Assertion and Assertion in Encapsulation or API,Author 2,8/29/23,Author 1,9/5/23
 Rust Bindings for a C Library,1,0,Domain,1,,Author 1,8/9/23,Author 1,8/10/23
 Rust Has Great Tooling,3,0,Benefits of Rust,1,Merged from Rust's Tooling is Great and Dependency Management,Author 1,8/9/23,Author 1,9/5/23
 Rust is ergonomic,6,0,Benefits of Rust,1,"Rust code is aesthetically ""cleaner"" or more ergonomic than other languages.",Author 1,9/5/23,Author 1,9/5/23

@@ -12,7 +12,7 @@ suppressPackageStartupMessages({
     library(reshape2)
     library(ggpubr)
 })
-if(!interactive()) pdf(NULL)
+sessionInfo()
 loadfonts(quiet = TRUE)
 options(vsc.plot = FALSE)
 
@@ -20,31 +20,18 @@ is.yes <- function(x) {
     return(x == "Yes")
 }
 
-positivity_choices <- c(
-    "Extremely negatively",
-    "Somewhat negatively",
-    "Neither positively nor negatively",
-    "Unsure",
-    "Somewhat positively",
-    "Extremely positively"
-)
+ACM_PAGE_WIDTH <- 5.497527778
+ACM_COL_WIDTH <- ACM_PAGE_WIDTH / 2
+PLOT_FONT <- "Linux Libertine Display"
 
-frequency_choices <- c(
-    "Never",
-    "Sometimes",
-    "About half the time",
-    "Most of the time",
-    "Always"
-)
+positivity_neutral <- c("Neither positively nor negatively", "Unsure")
+positivity_choices <- c(c("Extremely negatively", "Somewhat negatively"), positivity_neutral, c("Somewhat positively", "Extremely positively"))
 
-frequency_choices_unsure <- c(
-    "Never",
-    "Sometimes",
-    "Unsure",
-    "About half the time",
-    "Most of the time",
-    "Always"
-)
+frequency_neutral <- c("About half the time")
+frequency_choices <- c("Never", "Sometimes", frequency_neutral, "Most of the time", "Always")
+
+frequency_unsure_neutral <- c("Unsure", frequency_neutral)
+frequency_choices_unsure <- c("Never", "Sometimes", "Unsure", frequency_neutral, "Most of the time", "Always")
 
 agreement_choices <- c(
     "Strongly disagree",
@@ -113,8 +100,7 @@ date_frequency_choices <- c(
     "Weekly",
     "Monthly",
     "Yearly",
-    "Less than once a year",
-    "Never"
+    "Less than once a year"
 )
 
 likely_unlikely_choices <- c(
@@ -155,7 +141,6 @@ screening <- screening_eligible %>%
     filter(!is.na(ID)) %>%
     filter(!is.na(PID))
 
-
 questions <- read_csv(file.path("./data/community_survey/questions.csv"), show_col_types = FALSE)
 
 survey_complete_and_elligible <- survey_raw %>%
@@ -193,8 +178,8 @@ years <- years %>%
 years$language <- ifelse(years$language == "BQ2", "C", years$language)
 years$language <- ifelse(years$language == "BQ3", "C++", years$language)
 years$language <- ifelse(years$language == "ELQ1", "Rust", years$language)
-# column names to title
 
+# column names to title
 colnames(years) <- c("Language", "Mean", "Min", "Max", "Stdev")
 survey_pivot <- survey
 survey <- survey %>%
@@ -227,17 +212,24 @@ all <- survey %>%
     unique()
 num_responses_per_question <- compute_num_responses(all)
 
-compute_frequency <- function(population) {
+compute_frequency <- function(sample) {
+    sample_size <- nrow(sample)
+    num_responses_per_question_in_sample <- survey %>% 
+        filter(response_id %in% sample$response_id) %>%
+        group_by(question_id) %>%
+        summarise(total_num_responses = n()) %>%
+        ungroup()
     result <- survey %>%
-        inner_join(population, by = c("response_id")) %>%
+        inner_join(sample, by = c("response_id")) %>%
         group_by(question_id, value) %>%
-        summarise(num_responses = n())
+        summarise(num_responses = n()) %>%
+        inner_join(num_responses_per_question_in_sample, by = c("question_id")) %>%
+        mutate(percentage = round(num_responses / total_num_responses * 100, 1)) %>%
+        select(question_id, value, percentage, num_responses, total_num_responses) %>%
+        ungroup()
     return(result)
 }
-frequency <- compute_frequency(all) %>%
-    inner_join(num_responses_per_question, by = c("question_id")) %>%
-    mutate(percentage = round(num_responses / total_num_responses * 100, 1)) %>%
-    select(question_id, value, percentage, num_responses, total_num_responses)
+FREQ_ALL <- compute_frequency(all)
 
 
 # — HELPER FUNCTIONS —
@@ -260,9 +252,9 @@ ensure_choices <- function(df, choices) {
     return(df)
 }
 
-compute_likert_frequency <- function(selected_questions, choices) {
+compute_likert_frequency <- function(frequency, id, choices) {
     computation <- questions %>%
-        filter(question_id %in% selected_questions) %>%
+        filter(question_id == id) %>%
         inner_join(frequency, by = c("question_id")) %>%
         mutate(question = paste0(question_id, " - ", question)) %>%
         select(-question_id) %>%
@@ -278,7 +270,7 @@ compute_likert_frequency <- function(selected_questions, choices) {
 compute_category_frequency <- function(selected_question) {
     computation <- questions %>%
         filter(question_id %in% c(selected_question)) %>%
-        inner_join(frequency, by = c("question_id")) %>%
+        inner_join(FREQ_ALL, by = c("question_id")) %>%
         select(-question, -question_id, -num_responses, -total_num_responses) %>%
         rename(
             All = percentage
@@ -290,112 +282,130 @@ compute_category_frequency <- function(selected_question) {
     computation
 }
 
-plot_likert_bars <- function(df, width, height, path, ..., center = NA, palette = "RdYlBu", hide_questions = FALSE, width_scale = 0.9, cutoff = 5, extract_legend = NA, legend_width = width, legend_height = 1, hide_legend = FALSE, wrap_legend = FALSE) {
-    # get all column names except for the first one
-    options <- colnames(df)[2:length(colnames(df))]
-    if (is.na(center)) {
-        # get the middle option, if the length is noneven
-        # otherwise, stop
-        if (length(options) %% 2 == 1) {
-            center <- options[[ceiling(length(options) / 2)]]
+plot_likert_bar <- function(df, total_num_responses, options, path, center = c(), palette = "RdYlBu", extract_legend = NA, add_unsure = FALSE) {
+    width <- 0.35*ACM_COL_WIDTH
+    height <- 0.3
+    # if unsure is not a column, add it with the value 0
+    if (add_unsure) {
+        if (!("Unsure" %in% colnames(df))) {
+            df$Unsure <- 0
         }
     }
+    if (length(center) == 0) {
+        if (length(options) %% 2 == 1) {
+            center <- c(options[[ceiling(length(options) / 2)]])
+        } 
+    }
+    if (length(center) == 0) {
+        index_left <- length(options) / 2
+        index_right <- index_left + 1
+    }else {
+        index_left <- which(colnames(df) == center[1])
+        index_right <- which(colnames(df) == center[length(center)]) + 1
+    }
+
+    excluded_middle <- colnames(df)[(index_left):(index_right - 1)]
+
+    sum_right <- df %>%
+        select(-question) %>%
+        select(all_of(0:(index_left - 2))) %>%
+        rowSums() %>%
+        round(0)
+
+    sum_left <- df %>%
+        select(-question) %>%
+        select(all_of((index_right-1):ncol(.))) %>%
+        rowSums() %>%
+        round(0)
+
+    stopifnot(sum_left + sum_right <= 100)
+
     df <- df %>%
         melt(id.vars = "question") %>%
         mutate(
             variable = factor(variable, levels = options, ordered = TRUE),
-            value = if_else(variable == center, value / 2, value)
+            value = value
         )
-    df$value <- round(df$value, 1)
-    if("Linux Libertine Display" %in% fonts()) {
-        default_text <- element_text(size = 8, family = "Linux Libertine Display", color = "#000000")
+    df$value <- round(df$value, 0)
+    if(PLOT_FONT %in% fonts()) {
+        default_family <- PLOT_FONT
+        default_text <- element_text(size = 8, family = PLOT_FONT, color = "#000000")
     } else {
-        default_text <- element_text(size = 10, color = "#000000")
+        default_family <- ""
+        default_text <- element_text(size = 8, color = "#000000")
     }
-    negative_labels <- options[1:ceiling(length(options) / 2)]
-    negative_data <- filter(df, variable %in% negative_labels)
-
-    positive_labels <- options[ceiling(length(options) / 2):length(options)]
-    positive_data <- filter(df, variable %in% positive_labels)
 
     likert_plot <- ggplot(data = df, aes(question, value, fill = variable)) +
         geom_col(
-            data = positive_data,
-            position = position_stack(reverse = T),
-            width = width_scale,
-        ) +
-        geom_col(
-            data = negative_data,
-            aes(y = -value),
-            width = width_scale
+            position = position_stack(),
+            width = 1
         ) +
         labs(
             x = element_blank(),
-            y = "% of Respondents",
+            y = element_blank(),
             fill = element_blank(),
-            axis.title = default_text,
-            axis.text = default_text,
-            axis.ticks = element_line(color = "black"),
-        ) +
-        coord_flip() +
+            axis.title = element_blank(),
+            axis.text = element_blank(),
+            axis.ticks = element_blank(),
+        ) + 
+        coord_flip(clip = "off") +
         theme(text = default_text) +
-        scale_y_continuous(labels = abs) +
-        scale_fill_brewer(palette = palette, drop = FALSE) +
+        scale_y_continuous(labels = abs, expand = c(0, 0)) +
+        scale_x_discrete(expand = c(0, 0)) +
+        scale_fill_brewer(
+            palette = palette,
+            drop = FALSE,
+        ) +
         theme(
             panel.grid.major = element_blank(),
             panel.grid.minor = element_blank(),
             panel.background = element_blank(),
-            legend.key.size = unit(0.75, "line"),
-            legend.text = default_text,
-            axis.title = default_text,
-            axis.text = default_text,
-            axis.ticks.y = element_blank()
-        ) +
-        geom_hline(yintercept = 0, colour = "black")
+            axis.title = element_blank(),
+            axis.text = element_blank(),
+            axis.ticks.y = element_blank(),
+            axis.ticks.x = element_blank(),
+            plot.margin=(margin(l=0, r=0, t=0, b=0)),
+            text = default_text,
+            legend.margin = margin(0, 0, 0, 0),
+            legend.key.spacing.x = unit(3, "mm"),
+            legend.key.width = unit(3.5, "mm"),
+            legend.key.height = unit(3.5, "mm"),
+            legend.key.spacing.y = unit(0, "mm"),
+            legend.position = "bottom",
+            legend.direction = "horizontal",  
+            legend.text = element_text(size = 8, family = default_family),
+            axis.ticks.length = unit(0, "pt")
+        ) + guides(
+        fill = guide_legend(
+            nrow = 1, 
+            byrow = TRUE,
+            reverse = TRUE,
+            override.aes = list(
+                linetype = 1
+            )
+        )
+    )
 
-    if (wrap_legend) {
-        likert_plot <- likert_plot + theme(plot.margin = unit(
-            c(0, 0, 0, 0),
-            "inches"
-        ), legend.position = "bottom", legend.margin = margin()) +
-            guides(fill = guide_legend(ncol = 2, byrow = FALSE))
-    } else {
-        likert_plot <- likert_plot + theme(plot.margin = unit(
-            c(0, 0, 0, 0),
-            "inches"
-        ), legend.position = "bottom", legend.direction = "horizontal", legend.margin = margin()) +
-            guides(fill = guide_legend(nrow = 1, byrow = TRUE))
-    }
-    if (hide_questions) {
-        likert_plot <- likert_plot + theme(axis.text.y = element_blank(), axis.title.y = element_blank(), axis.ticks.y = element_blank())
-    }
     if (!is.na(extract_legend)) {
         legend_plot <- as_ggplot(get_legend(likert_plot))
-        ggsave(plot = legend_plot, file = extract_legend, width = legend_width, height = legend_height, dpi = 300)
+        ggsave(
+            plot = legend_plot,
+            file = extract_legend,
+            width = ACM_PAGE_WIDTH,
+            height = 0.3,
+            units = c("in"),
+            dpi = 300
+        )
     }
-    if (hide_legend | !is.na(extract_legend)) {
-        likert_plot <- likert_plot + theme(legend.position = "none")
-    }
-    ggsave(plot = likert_plot, file = path, width = width, height = height, dpi = 300)
-    return(likert_plot)
-}
-
-plot_bars <- function(df, ylab, title, width, height, ..., cutoff = 1, label_size = 4, disable_order = FALSE) {
-    if (disable_order) {
-        initial_plot <- ggplot(data = df, aes(y = value, x = category), width = width, height = height)
-    } else {
-        initial_plot <- ggplot(data = df, aes(y = value, x = reorder(category, value)), width = width, height = height)
-    }
-    initial_plot +
-        geom_bar(position = "dodge", stat = "identity", fill = "#674ea7") +
-        labs(
-            x = element_blank(),
-            y = ylab,
-            fill = "Population",
-            title = title
-        ) +
-        coord_flip() +
-        theme_minimal(base_size = 18) +
-        theme(text = element_text(color = "#000000"), axis.text = element_text(size = 8)) +
-        geom_text(data = subset(df, value >= cutoff), aes(label = value), vjust = 0.5, hjust = 1.5, colour = "white", size = label_size)
+    likert_plot <- likert_plot + 
+            theme(legend.position = "none")
+    ggsave(
+        plot = likert_plot,
+        file = path,
+        width = width,
+        height = 0.15,
+        units = c("in"),
+        dpi = 300
+    )
+    return(c(sum_left, sum_right, total_num_responses))
 }

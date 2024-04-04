@@ -7,7 +7,5 @@ choices.*
 output.csv
 sandbox.r
 build
-renv
-.Rprofile
 irr/*/*.tex
 irr/*/alpha.csv
