@@ -266,7 +266,6 @@ compute_likert_frequency <- function(frequency, id, choices) {
     return(computation)
 }
 
-
 compute_category_frequency <- function(selected_question) {
     computation <- questions %>%
         filter(question_id %in% c(selected_question)) %>%
@@ -282,7 +281,7 @@ compute_category_frequency <- function(selected_question) {
     computation
 }
 
-plot_likert_bar <- function(df, total_num_responses, options, path, center = c(), palette = "RdYlBu", extract_legend = NA, add_unsure = FALSE) {
+plot_likert_bar <- function(df, total_num_responses, options, path, color_list, center = c(), palette = "RdYlBu", extract_legend = NA, add_unsure = FALSE) {
     width <- 0.35*ACM_COL_WIDTH
     height <- 0.3
     # if unsure is not a column, add it with the value 0
@@ -352,10 +351,7 @@ plot_likert_bar <- function(df, total_num_responses, options, path, center = c()
         theme(text = default_text) +
         scale_y_continuous(labels = abs, expand = c(0, 0)) +
         scale_x_discrete(expand = c(0, 0)) +
-        scale_fill_brewer(
-            palette = palette,
-            drop = FALSE,
-        ) +
+        scale_fill_manual(values = color_list) +
         theme(
             panel.grid.major = element_blank(),
             panel.grid.minor = element_blank(),

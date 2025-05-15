@@ -35,26 +35,34 @@ to_table <- function (df) {
     )
 }
 
+colors_without_unsure <- c("#2b7bb6", "#92bedb", "#def4f9", "#fdae60", "#d6171b")
+colors_with_unsure <- c("#2b7bb6", "#92bedb", "#def4f9", "#ffffbe", "#fdae60", "#d6171b")
+
+
 PLOT_CONFIG <- list(
     list(
         type = "freq",
         choices = frequency_choices,
-        center = frequency_neutral
+        center = frequency_neutral,
+        color_list = colors_without_unsure
     ),
     list(
         type = "freq_unsure",
         choices = frequency_choices_unsure,
-        center = frequency_unsure_neutral
+        center = frequency_unsure_neutral,
+        color_list = colors_with_unsure
     ),
     list(
         type = "yes_no_grad",
         choices = yes_no_choices,
-        center = c()
+        center = c(),
+        color_list = colors_without_unsure
     ),
     list(
         type = "freq_time",
         choices = date_frequency_choices,
-        center = c()
+        center = c(),
+        color_list = colors_without_unsure
     )
 )
 
@@ -78,7 +86,8 @@ plots <- PLOT_CONFIG %>%
                     options = config$choices,
                     path = file.path(result_dir, paste0(plot_id, ".pdf")),
                     center = config$center,
-                    extract_legend = file.path(legend_dir, paste0("legend_", type, ".pdf"))
+                    extract_legend = file.path(legend_dir, paste0("legend_", type, ".pdf")),
+                    color_list = config$color_list
                 )
                 data.frame(
                     rq = rq,
