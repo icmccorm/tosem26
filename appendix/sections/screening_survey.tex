@@ -1,0 +1,57 @@
+\subsubsection{Eligibility}
+\label{survey:eligibility}
+\begin{protocol}
+\item \label{sc:req-exp} \internote{Required for eligibility, yes/no} Do you have more than 1 year of experience using Rust?
+
+\item \label{sc:unsafe} \internote{Required for eligibility, yes/no} Do you regularly reason about the correctness of unsafe code?
+\item \internote{Required for eligibility if no to previous, yes/no} Do you regularly write new Rust code or edit existing Rust code within an \unsafe block or a function?
+\end{protocol}
+
+\subsubsection{Background}
+\label{survey:background}
+\begin{protocol}
+\item \label{sc:exp} \internote{Required $\geq$1 for eligibility, short answer} How many years of experience do you have using Rust?
+
+\item \label{sc:ffi} \internote{yes/no} Do you call foreign functions from Rust
+
+\begin{protocolcond}{\ifyes}
+\item  \internote{ check all languages that apply } Foreign functions that you call \textit{\textbf{from}} Rust are written in:
+\end{protocolcond}
+
+\item \label{sc:ffi:other} \internote{yes/no} Do you call Rust functions from other languages?
+
+\begin{protocolcond}{\ifyes}
+\item  \internote{ check all languages that apply} Your code that calls \textbf{\textit{foreign Rust}} functions is written in:
+\end{protocolcond}
+
+\item  \internote{ \ifyestxt \ to 2 or 3, select all that apply} Select the tools and methods you use to create foreign bindings. 
+    \begin{itemize}
+        \item Manually written, bindgen, cbindgen, wasm, bindgen, cxx, autocxx, PyO3, hs-bindgen, Other (short answer)
+    \end{itemize}
+
+\item \label{sc:intrinsics} \internote{yes/no} Do you use Rust's intrinsics?
+
+\item \label{sc:syscalls}\internote{yes/no} Do you use system calls?
+
+\item \label{sc:types} \internote{select all that apply} Which of the following reference and memory container types have you converted to raw pointers or used to contain raw pointers?
+    \begin{itemize}
+        \item $\code{Box}$, $\code{Rc}$, $\code{UnsafeCell}$, $\code{Cell}$, $\code{Arc}$, $\code{RefCell}$, $\code{MaybeUninit}$, $\code{ManuallyDrop}$, Other (short answer)
+    \end{itemize}
+
+\item \label{sc:tool} \internote{select all that apply} Which of the following bug-finding tools do you use with codebases containing \unsafe Rust?
+    \begin{itemize}
+        \item Clippy, Miri, AddressSanitizer (ASAN), ThreadSanitizer (TSAN), UndefinedBehaviorSanitizer (UBSAN), MemorySanitizer (MSAN), Other (short answer)
+    \end{itemize}
+\end{protocol}
+
+\subsubsection{Personal Information}
+\label{survey:personal-information}
+
+
+
+The following questions request identifying information. Your affiliation will be collected so that we can determine if experiences with unsafe Rust vary based on the institutional context where development takes place. The specifics of your affiliation will not be published. Your affiliation will only be referred to in published data under broad classifications similar but not limited to ``industry,'' ``academia,'' and ``open-source.'' Your name and email are collected for scheduling and payment purposes.
+\begin{protocol}
+\item \label{sc:name} \internote{short answer} What is your name?
+\item \label{sc:email} \internote{short answer} What is your email?
+\item \label{sc:affiliation} \internote{short answer} What is your current affiliation?
+\end{protocol}

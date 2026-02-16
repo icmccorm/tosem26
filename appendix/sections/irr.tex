@@ -1,0 +1,99 @@
+We used interrater reliability as a mechanism for refining our codebook. This took place across 7 ``rounds'' between the first and second authors. During each round, we coded sets of quotes that were randomly selected from across all interviews. To sample quotes, we concatenated all of the interview transcripts into a single document and randomly sampled character indices. The first author visited each index and selected a snippet of text around that location. Each round had a unique set of quotes. When an index was randomly selected and it was near a quote used in a previous round, the first author would choose an adjacent quote or continue sampling to find a new one.
+
+In each of the first 5 rounds, we coded 20 randomly selected quotes. Since our reliability ratings were inconsistent between each round, we switched to coding a larger sample of 60 quotes for rounds 6 and 7. After round 6, we excluded certain themes where establishing reliability was less crucial, since their constituent codes were either keywords in the transcripts (``Interoperation,'' ``Types,'' ``Tools''); corresponded to a singular, abstract theme (``Uncertainty''); or had not been encountered during previous rounds (``Challenges with Bug-finding''). The theme ``\unsafe data structure'' was excluded from this round because its purpose was to identify data structures that interview participants had mentioned so that the authors could create prototypical examples for future research, so it was not relevant to our research questions. We also chose smaller quote sizes for round 7, since we found that many of our differences in coding decisions during the previous round were due having missed details instead of actively disagreeing about the meaning of a quote. 
+
+We calculated interrater reliability using Krippendorff's alpha, and our scores for each round are shown in Table~\ref{table:irr}. Since rounds 1 through 5 consisted of small sets of quotes, we calculated a reliability score for all coding decisions across each of these rounds prior to moving on to round 6. A ``-'' indicates that a theme was excluded from a round, while a ``?'' indicates that a theme was included in that round, but that no quotes were coded for it. A ``?'' is equivalent to an alpha score of 1, but we found that this distinction was useful to determine if we had actually encountered quotes for that theme during a particular set of rounds.
+
+During each round, coding decisions were recorded in an online form. The form was split into multiple sections, with one question per theme. Table~\ref{table:themes} outlines the structure of the survey and provides references to tables containing the codes for each theme. Some themes, such as ``Uncertainty,'' are their own code and are can only be present or absent from a quote. Others, such as ``Tools,'' can have multiple codes appear within a single quote. After each round, the first and third author met and refined the themes, making changes to the form as necessary. Each of these changes is reflected in the structure of Table~\ref{table:themes} and the tables it references. The replication package contains an unabbreviated list of the themes and codes used during each round.
+\begin{table}[H]
+\caption{Interrater reliability between the first and second author calculated using Krippendorff's alpha. The column ``Survey Questions'' includes references to sections or individual questions that have a direct correspondence to each theme, indicating that a theme is being used as a product of our qualitative analysis.} 
+\label{table:irr}
+\small
+\centering
+\input{tables/irr.tex}
+\end{table}
+
+
+\begin{table}
+\caption{Themes and theme titles used during inter-rater reliability. The ``Type'' column indicates the method used to indicate that a code for that theme was present. Themes of type ``Yes / No'' were recorded by indicating their presence or absence by selecting ``Yes,'' ``N/A'', or leaving the prompt unselected. Themes that are ``Select One'' or ``Select All'' have multiple constituent codes, where either one or all codes that apply could be selected, respectively. For themes with multiple codes, the ``Codes'' column includes a reference to a table of codes for that theme located further in the Appendix.}
+\label{table:themes}
+\small
+\centering
+\input{tables/titles.tex}
+\end{table}
+
+
+\begin{table}
+\caption{Codes for the ``Bug Finding'' theme, which indicate challenges that participants encountered with bug-finding tools such as false positives or false negatives.}
+\label{table:codes:bug_finding}
+\input{tables/codes/bug_finding.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Bugs'' Theme, which indicate different types of bugs that were mentioned by interview participants. Cells spanning multiple rows in the ``Rounds'' column indicate that codes were either merged, split, or replaced in later rounds.}
+\label{table:codes:bugs}
+\input{tables/codes/bugs.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Domain'' Theme, which indicates the different types of application domains mentioned by interview participants. Cells spanning multiple rows in the ``Rounds'' column indicate that codes were replaced or split in later rounds.}
+\label{table:codes:domain}
+\input{tables/codes/domain.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Generation vs. Validation'' Theme, which indicate interview participants' preferences for using certain type of methods to create declarations for foreign functions.}
+\label{table:codes:genvval}
+\input{tables/codes/binding_generation_preferences.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Interoperation'' Theme, which indicate the languages that participants used alongside Rust in multi-language applications.}
+\label{table:codes:interop}
+\input{tables/codes/interop.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Issues with Miri'' theme, which indicate the difficulties that participants had when validating their test cases using Miri. Cells spanning multiple rows in the ``Rounds'' column indicate that codes were either merged, split, or replaced in later rounds.}
+\label{table:codes:miri}
+\input{tables/codes/miri.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Low-Level Operations'' theme, which indicate a subset of operations that Rust developers may use in embedded or OS development contexts. After the first round, this theme was merged with the theme ``Unsafe Operations'', which is described in Table~\ref{table:codes:ops}}
+\label{table:codes:low_level}
+\input{tables/codes/low_level.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Tools'' theme, which indicate the different development tools mentioned by interview participants.}
+\label{table:codes:tools}
+\input{tables/codes/tools.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Types'' theme, which indicate the different Rust data types mentioned by interview participants. The code \code{ManuallyDrop<T>} was unintentionally left out of round 6.}
+\label{table:codes:types}
+\input{tables/codes/types.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Unsafe Operations'' theme, which indicate the different types of \unsafe operations mentioned by interview participants. Cells spanning multiple rows in the ``Rounds'' column indicate that codes were either merged, split, or replaced in later rounds.}
+\label{table:codes:ops}
+\input{tables/codes/ops.tex}
+\end{table}
+
+\begin{table}
+\caption{Codes for the ``Why \unsafe?'' theme, which indicate the different motivations that participants cited for their use of \unsafe code. Cells spanning multiple rows in the ``Rounds'' column indicate that a code was replaced in later rounds.}
+\label{table:codes:whyunsafe}
+\input{tables/codes/why_unsafe.tex}
+\end{table}
+
+
+
+
+
+
+
+
+

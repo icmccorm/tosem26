@@ -1,0 +1,15 @@
+\centering
+\small
+\begin{tabular}{|cp{10cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Unsafe Operations}}                                                                          \\ \hline
+\multicolumn{1}{|c|}{\textbf{Rounds}} & \textbf{Code(s)}                                                                  \\ \hline
+\multicolumn{1}{|c|}{1-5}             & Pointer arithmetic / integer to pointer conversion                                \\ \hline
+\multicolumn{1}{|c|}{1-2}             & Custom allocator                                                                  \\
+\multicolumn{1}{|c|}{3-7}             & Replaced Rust's default allocator with a custom allocator                         \\ \hline
+
+\multicolumn{1}{|c|}{1-7}             & Inline assembly, Instrinsics, System calls                                        \\ \hline
+\multicolumn{1}{|c|}{3-7}             & Raw allocation in Rust \\ \hline
+\multicolumn{1}{|c|}{4-7}             & Transmute                                                                         \\ \hline
+\multicolumn{1}{|c|}{6-7}             & Multiple / cyclic aliasing, Other                                                 \\ \hline
+\end{tabular}

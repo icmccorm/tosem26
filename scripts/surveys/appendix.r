@@ -4,17 +4,15 @@ if (file.exists(output_file)) {
     file.remove(output_file)
 }
 dir.create("./build", showWarnings = FALSE)
-# create output_file
 
 write_tex <- function(text) {
     cat(text, file = output_file, append = TRUE)
 }
 
-
 counts <- survey %>%
     inner_join(questions, by = "question_id") %>%
     group_by(question_id, question, value) %>%
-    summarize(n = n()) %>%
+    summarize(n = n(), .groups = "keep") %>%
     ungroup()
 
 sections <- sections %>% mutate(order = row_number())
@@ -24,25 +22,17 @@ counts$section_id <- gsub("[0-9]+(_[A-Z]+)?", "", counts$section_id)
 
 counts <- counts %>% inner_join(sections, by = c("section_id"))
 
-# remove rows where the question ends with "- Other - Text"
 counts <- counts %>% filter(!grepl("- Other - Text", question))
-# remove the string "- Selected Choice" from question
 counts$question <- gsub(" - Selected Choice", "", counts$question)
 counts <- counts %>% arrange(order)
 
-
-# append text to file
-
-# iterate over each section in sections
 for (curr_section_id in unique(counts$section_id)) {
     section_text <- sections %>%
         filter(section_id == curr_section_id) %>%
         pull(section)
     write_tex(paste0("\\subsubsection{", section_text, "}\n"))
-    # section id lowercase
     write_tex(paste0("\\label{survey:sec:", tolower(curr_section_id), "}\n\n"))
     write_tex(paste0("\\begin{protocol}\n"))
-    # iterate over each question in section
 
     counts_in_section <- counts %>% filter(section_id == curr_section_id)
     for (curr_question_id in unique(counts_in_section$question_id)) {
@@ -52,7 +42,6 @@ for (curr_section_id in unique(counts$section_id)) {
             unique() %>%
             pull(question)
         write_tex(paste0("\\item \\label{survey:", str_to_lower(curr_question_id), "} ", curr_question_text, "\n"))
-
 
         counts_in_question <- counts_in_section %>%
             filter(question_id == curr_question_id) %>%
@@ -91,6 +80,7 @@ for (curr_section_id in unique(counts$section_id)) {
             matching_list <- predefined_lists[[matching_list_name]]
             counts_in_question <- counts_in_question[order(match(counts_in_question$value, matching_list)), ]
         }
+        
         counts_in_question <- counts_in_question %>%
             select(value, n) %>%
             unique() %>%

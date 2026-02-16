@@ -1,12 +1,13 @@
-FROM rocker/verse:4.4.1 AS base
-WORKDIR /usr/src/void
+FROM rocker/verse:4.5.1 AS base
+WORKDIR /usr/src/study
 COPY . .
-FROM base as setup
+
+FROM base AS setup
 RUN apt update && apt upgrade -y
 
 FROM setup AS renv
-ENV RENV_PATHS_LIBRARY renv/library
+ENV RENV_PATHS_LIBRARY=renv/library
 RUN R -e "renv::restore()"
 
-FROM renv as build
+FROM renv AS build
 RUN make

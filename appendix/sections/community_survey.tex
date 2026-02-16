@@ -1,0 +1,1050 @@
+\subsection{Affirming Consent}
+\label{survey:sec:cq}
+\begin{protocol}
+\item \label{survey:cq1} \internote{required, yes/no} I am age 18 or older.
+
+\item \label{survey:cq2} \internote{required, yes/no} I have read and understand the information above.
+
+\item \label{survey:cq3} \internote{required, yes/no} I want to participate in this research and continue with the survey.
+\end{protocol}
+
+\subsection{Eligibility}
+\label{survey:sec:elq}
+
+\begin{protocol}
+\item \label{survey:elq1} \internote{required, $\geq 1$} How many years of experience do you have using Rust?
+
+\item \label{survey:elq2} \internote{required, yes/no} Have you written, edited, read, audited, or engaged with unsafe Rust code in any way?
+\end{protocol}
+
+\subsection{Background}
+\label{survey:sec:bq}
+
+\begin{protocol}
+\item \label{survey:bq1} \internote{short answer} How many years have you engaged with programming or the field of software engineering at-large? This includes acting in a professional capacity and as a hobby.
+
+\item \label{survey:bq2} \internote{short answer} How many years of experience do you have using C?
+
+\item \label{survey:bq3} \internote{short answer} How many years of experience do you have using C++?
+
+\item \label{survey:bq4} \internote{select one} How frequently do you engage with unsafe Rust code in any way?
+\begin{itemize}
+\item \texttt{(20)} - \textit{Daily}
+\item \texttt{(45)} - \textit{Weekly}
+\item \texttt{(58)} - \textit{Monthly}
+\item \texttt{(29)} - \textit{Yearly}
+\item \texttt{(\space 8)} - \textit{Less than once a year}
+\end{itemize}
+\item \label{survey:bq5}  Have you ever committed unsafe Rust code to a public GitHub repository?
+\begin{itemize}
+\item \texttt{(118)} - \textit{Yes}
+\item \texttt{(\space 42)} - \textit{No}
+\end{itemize}
+\item \label{survey:bq6}  Do you regularly write new Rust code or edit existing Rust code within an unsafe block or function?
+\begin{itemize}
+\item \texttt{(85)} - \textit{Yes}
+\item \texttt{(75)} - \textit{No}
+\end{itemize}
+\item \label{survey:bq7} \internote{select one} How frequently do you write new Rust code or edit existing Rust code within an unsafe block or function?
+\begin{itemize}
+\item \texttt{(12)} - \textit{Daily}
+\item \texttt{(29)} - \textit{Weekly}
+\item \texttt{(69)} - \textit{Monthly}
+\item \texttt{(33)} - \textit{Yearly}
+\item \texttt{(17)} - \textit{Less than once a year}
+\end{itemize}
+\end{protocol}
+
+\subsection{Domain}
+\label{survey:sec:dmq}
+
+\begin{protocol}
+\item \label{survey:dmq1} \internote{select all} Which of the following types of applications have you developed or contributed to in any capacity using any programming language?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(120)} - \textit{Web applications - Backend}
+\item \texttt{(111)} - \textit{Data structures and language-level primitives}
+\item \texttt{(103)} - \textit{Serialization \& deserialization}
+\item \texttt{(\space 96)} - \textit{Networking \& distributed systems}
+\item \texttt{(\space 93)} - \textit{Embedded systems}
+\item \texttt{(\space 90)} - \textit{Web applications - Frontend}
+\item \texttt{(\space 85)} - \textit{Interpreters \& runtime systems}
+\item \texttt{(\space 83)} - \textit{Image \& Data processing}
+\item \texttt{(68)} - \textit{Game development}
+\item \texttt{(60)} - \textit{Operating systems}
+\item \texttt{(50)} - \textit{Database systems}
+\item \texttt{(46)} - \textit{Non-JIT Compilation}
+\item \texttt{(34)} - \textit{Static analysis}
+\item \texttt{(21)} - \textit{Other}
+\item \texttt{(13)} - \textit{Manufacturing}
+\item \texttt{(11)} - \textit{JIT Compilation}
+\item \texttt{(\space 9)} - \textit{Web browsers}
+\end{itemize}
+\end{multicols}
+\item \label{survey:dmq2}  \internote{select all} Which of the following types of applications have you developed or contributed in any capacity using Rust?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(85)} - \textit{Data structures and language-level primitives}
+\item \texttt{(85)} - \textit{Web applications - Backend}
+\item \texttt{(83)} - \textit{Serialization \& deserialization}
+\item \texttt{(66)} - \textit{Networking \& distributed systems}
+\item \texttt{(57)} - \textit{Embedded systems}
+\item \texttt{(55)} - \textit{Image \& Data processing}
+\item \texttt{(49)} - \textit{Interpreters \& runtime systems}
+\item \texttt{(46)} - \textit{Game development}
+\item \texttt{(31)} - \textit{Operating systems}
+\item \texttt{(31)} - \textit{Web applications - Frontend}
+\item \texttt{(30)} - \textit{Database systems}
+\item \texttt{(27)} - \textit{Non-JIT Compilation}
+\item \texttt{(21)} - \textit{Static analysis}
+\item \texttt{(14)} - \textit{Other}
+\item \texttt{(\space 6)} - \textit{JIT Compilation}
+\item \texttt{(\space 5)} - \textit{Manufacturing}
+\item \texttt{(\space 2)} - \textit{Web browsers}
+\end{itemize}
+\end{multicols}
+\item \label{survey:dmq3} Have you rewritten part or all of an application in Rust that was originally written in another language?
+\begin{itemize}
+\item \texttt{(115)} - \textit{Yes}
+\item \texttt{(\space 45)} - \textit{No}
+\end{itemize}
+\item \label{survey:dmq4} Have you authored or regularly contributed to a Rust crate that is published on crates.io?
+\begin{itemize}
+\item \texttt{(106)} - \textit{Yes}
+\item \texttt{(\space 54)} - \textit{No}
+\end{itemize}
+\item \label{survey:dmq5}  Have you authored or regularly contributed to a Rust crate not published on crates.io?
+\begin{itemize}
+\item \texttt{(129)} - \textit{Yes}
+\item \texttt{(\space 31)} - \textit{No}
+\end{itemize}
+\item \label{survey:dmq6} \internote{select one} When you first started using Rust, was it easy or difficult to write code that passed the borrow checker?
+\begin{itemize}
+\item \texttt{(\space 6)} - \textit{Extremely difficult}
+\item \texttt{(75)} - \textit{Somewhat difficult}
+\item \texttt{(36)} - \textit{Neither easy nor difficult}
+\item \texttt{(34)} - \textit{Somewhat easy}
+\item \texttt{(\space 9)} - \textit{Extremely easy}
+\end{itemize}
+\end{protocol}
+
+\subsection{Unsafe Features}
+\label{survey:sec:ufq}
+
+\begin{protocol}
+\item \label{survey:ufq1} \internote{select all} Which of the following Rust types have you used in an unsafe context for any purpose?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(110)} - \textit{MaybeUninit}
+\item \texttt{(\space 81)} - \textit{Box}
+\item \texttt{(\space 73)} - \textit{ManuallyDrop}
+\item \texttt{(\space 72)} - \textit{UnsafeCell}
+\item \texttt{(\space 50)} - \textit{Pin}
+\item \texttt{(\space 48)} - \textit{Arc}
+\item \texttt{(\space 46)} - \textit{Mutex}
+\item \texttt{(36)} - \textit{Cell}
+\item \texttt{(33)} - \textit{OnceCell}
+\item \texttt{(30)} - \textit{Rc}
+\item \texttt{(24)} - \textit{RefCell}
+\item \texttt{(18)} - \textit{Other}
+\item \texttt{(16)} - \textit{LazyCell}
+\end{itemize}
+\end{multicols}
+\item \label{survey:ufq2} \internote{select all} Which of the following unsafe Rust features have you used?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(142)} - \textit{Calling unsafe functions written in Rust}
+\item \texttt{(134)} - \textit{Dereferencing a raw pointer}
+\item \texttt{(118)} - \textit{mem::transmute}
+\item \texttt{(112)} - \textit{Calling foreign functions}
+\item \texttt{(\space 93)} - \textit{Pointer arithmetic}
+\item \texttt{(\space 84)} - \textit{Implementing an unsafe trait}
+\item \texttt{(\space 71)} - \textit{Mutable static variables}
+\item \texttt{(\space 67)} - \textit{Manual memory allocation}
+\item \texttt{(\space 60)} - \textit{In-place initialization or updates}
+\item \texttt{(60)} - \textit{System calls}
+\item \texttt{(56)} - \textit{Inline assembly}
+\item \texttt{(54)} - \textit{Declaring an unsafe trait}
+\item \texttt{(53)} - \textit{Accessing the fields of a union type}
+\item \texttt{(47)} - \textit{Implementing a custom allocator}
+\item \texttt{(43)} - \textit{Intrinsics}
+\item \texttt{(40)} - \textit{Self-referential structs}
+\item \texttt{(26)} - \textit{Global assembly}
+\item \texttt{(14)} - \textit{Cyclic aliasing patterns}
+\item \texttt{(\space 7)} - \textit{Other}
+\end{itemize}
+\end{multicols}
+\item \label{survey:ufq3} Have you contributed to a Rust crate that is designed to be used from at least one other language?
+\begin{itemize}
+\item \texttt{(76)} - \textit{Yes}
+\item \texttt{(84)} - \textit{No}
+\end{itemize}
+\end{protocol}
+
+\subsection{UnsafeCell}
+\label{survey:sec:q187}
+Questions in this section were only shown to respondents if they had selected ``\code{UnsafeCell}'' in their response to Question~\ref{survey:ufq1} of the survey.
+\begin{protocol}
+\item \label{survey:q187} \internote{select one} When you choose to use \code{UnsafeCell}, how often are you certain that it is necessary to avoid undefined behavior?
+\begin{itemize}
+\item \texttt{(\space 0)} - \textit{Never}
+\item \texttt{(\space 4)} - \textit{About half the time}
+\item \texttt{(\space 7)} - \textit{Sometimes}
+\item \texttt{(30)} - \textit{Most of the time}
+\item \texttt{(31)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\subsection{Calling Unsafe Functions}
+\label{survey:sec:cufq}
+\textit{This section was only shown to respondents if they had selected ``\textit{Calling unsafe functions written in Rust}'' or ``\textit{Calling foreign functions}'' in their response to Question~\ref{survey:ufq1} of the survey.}
+\begin{protocol}
+\item \label{survey:cufq1} \internote{select one} When you use an \unsafe API, how often do you look for documentation to ensure that you meet all of its requirements for safety and correctness?
+\begin{itemize}
+\item \texttt{(\space 2)} - \textit{Never}
+\item \texttt{(10)} - \textit{Sometimes}
+\item \texttt{(11)} - \textit{About half the time}
+\item \texttt{(34)} - \textit{Most of the time}
+\item \texttt{(95)} - \textit{Always}
+\end{itemize}
+\item \label{survey:cufq2} \internote{select one} When you use an \unsafe API, how often do you insert runtime checks to ensure that you meet its requirements for safety and correctness?
+\begin{itemize}
+\item \texttt{(13)} - \textit{Never}
+\item \texttt{(54)} - \textit{Sometimes}
+\item \texttt{(21)} - \textit{About half the time}
+\item \texttt{(44)} - \textit{Most of the time}
+\item \texttt{(20)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\subsection{Intrinsics}
+\label{survey:sec:itq}
+\textit{This section was only shown to respondents if they had selected ``\textit{Intrinsics}'' in their response to Question~\ref{survey:ufq1} of the survey.}
+\begin{protocol}
+\item \label{survey:itq1} \internote{select all} Which of the following types of intrinsics have you used in Rust applications?
+\begin{itemize}
+\item \texttt{(37)} - \textit{Architecture-specific or SIMD intrinsics}
+\item \texttt{(18)} - \textit{Atomics}
+\item \texttt{(14)} - \textit{Const intrinsics}
+\item \texttt{(\space 7)} - \textit{Volatiles}
+\item \texttt{(\space 6)} - \textit{Other}
+\end{itemize}
+\item \label{survey:itq2}  Do you use runtime checks in Rust applications, such as the \code{is\_x86\_feature\_detected!} macro, to determine when certain hardware-specific features are supported?
+\begin{itemize}
+\item \texttt{(18)} - \textit{Yes}
+\item \texttt{(25)} - \textit{No}
+\end{itemize}
+\end{protocol}
+
+\subsection{ManuallyDrop + MaybeUninit}
+\label{survey:sec:mdmuq}
+\textit{This section was only shown to respondents if they had selected ``\code{MaybeUninit}'' and ``\code{ManuallyDrop}'' in their response to Question \ref{survey:ufq2} of the survey.}
+\begin{protocol}
+\item \label{survey:mdmuq1} \internote{select one} In Rust, how often is your use of \code{ManuallyDrop} associated with your use of \code{MaybeUninit}?
+\begin{itemize}
+\item \texttt{(15)} - \textit{Never}
+\item \texttt{(29)} - \textit{Sometimes}
+\item \texttt{(\space 7)} - \textit{Unsure}
+\item \texttt{(\space 2)} - \textit{About half the time}
+\item \texttt{(13)} - \textit{Most of the time}
+\item \texttt{(\space 1)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\subsection{Box}
+\label{survey:sec:bxq}
+\textit{This section was only shown to respondents if they had selected ``\code{Box}'' in their response to Question \ref{survey:ufq2} of the survey.}
+\begin{protocol}
+\item \label{survey:bxq1} According to Rust's current semantics, if you re-wrap a raw pointer as a \code{Box} using \code{Box::from\_raw}, and then you move the \code{Box}, the raw pointer becomes invalid. Has this caused problems or architectural challenges in the applications that you have contributed to?
+\begin{itemize}
+\item \texttt{(14)} - \textit{Yes}
+\item \texttt{(67)} - \textit{No}
+\end{itemize}
+\item \label{survey:bxq2} Have you ever encountered memory leaks due to leaking a raw pointer using \code{Box::into\_raw()} and then forgetting to re-wrap it using \code{Box::from\_raw()}?
+\begin{itemize}
+\item \texttt{(18)} - \textit{Yes}
+\item \texttt{(63)} - \textit{No}
+\end{itemize}
+\end{protocol}
+
+\subsection{Why unsafe?}
+\label{survey:sec:wuq}
+
+\begin{protocol}
+\item \label{survey:wuq1} \internote{select all} \ Think about the situations where you have typically used \unsafe. Which of the following reasons have motivated you to do so?
+\begin{itemize}
+\item \texttt{(123)} - \textit{I am not aware of a safe alternative at any level of ease-of-use or performance.}
+\item \texttt{(\space 75)} - \textit{I could use a safe pattern but unsafe is faster or more space-efficient.}
+\item \texttt{(\space 29)} - \textit{I could use a safe pattern but unsafe is easier to implement or more ergonomic.}
+\item \texttt{(\space 19)} - \textit{Other}
+\end{itemize}
+\end{protocol}
+
+\subsection{Why unsafe? - No clear alternative}
+\label{survey:sec:wunq}
+\textit{This section was only shown to respondents if they had selected ``\textit{I am not aware of a safe alternative at any level of ease-of-use or performance}'' in their response to Question~\ref{survey:wuq1} of the survey.}
+\begin{protocol}
+\item \label{survey:wunq1}  \internote{select all} \ Which of the following \unsafe features have you used because you were not aware of a safe alternative?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(80)} - \textit{Calling unsafe functions written in Rust}
+\item \texttt{(76)} - \textit{Calling foreign functions}
+\item \texttt{(72)} - \textit{Dereferencing a raw pointer}
+\item \texttt{(62)} - \textit{mem::transmute}
+\item \texttt{(49)} - \textit{Implementing an unsafe trait}
+\item \texttt{(40)} - \textit{Pointer arithmetic}
+\item \texttt{(35)} - \textit{Inline assembly}
+\item \texttt{(31)} - \textit{System calls}
+\item \texttt{(26)} - \textit{Declaring an unsafe trait}
+\item \texttt{(23)} - \textit{Accessing the fields of a union type}
+\item \texttt{(23)} - \textit{In-place initialization or updates}
+\item \texttt{(23)} - \textit{Intrinsics}
+\item \texttt{(23)} - \textit{Manual memory allocation}
+\item \texttt{(23)} - \textit{Mutable static variables}
+\item \texttt{(20)} - \textit{Implementing a custom allocator}
+\item \texttt{(19)} - \textit{Self-referential structs}
+\item \texttt{(12)} - \textit{Global assembly}
+\item \texttt{(\space 6)} - \textit{Cyclic aliasing patterns}
+\item \texttt{(\space 2)} - \textit{Other}
+\end{itemize}
+\end{multicols}
+\item \label{survey:wunq2}  \internote{select one} \ When you feel that you have no clear alternative other than using \unsafe, how often are you certain that it would be completely impossible to accomplish this task using a safe design pattern?
+\begin{itemize}
+\item \texttt{(\space 2)} - \textit{Never}
+\item \texttt{(19)} - \textit{Sometimes}
+\item \texttt{(\space 4)} - \textit{Unsure}
+\item \texttt{(18)} - \textit{About half the time}
+\item \texttt{(63)} - \textit{Most of the time}
+\item \texttt{(17)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\noindent \textit{The next question was only shown to respondents if they had selected any of the following types in their response to Question~\ref{survey:ufq2} of the survey.}
+\begin{protocol}
+\setcounter{protocoli}{2}
+\item \label{survey:wunq3}  \internote{select all} \ Which of the following Rust types have you used because you were not aware of a safe alternative?
+\begin{itemize}
+\item \texttt{(60)} - \textit{MaybeUninit}
+\item \texttt{(40)} - \textit{UnsafeCell}
+\item \texttt{(36)} - \textit{ManuallyDrop}
+\item \texttt{(\space 3)} - \textit{Other}
+\end{itemize}
+\end{protocol}
+
+\subsection{Why unsafe? - Ergonomics}
+\label{survey:sec:wueq}
+\textit{This section was only shown to respondents if they had selected ``\textit{I could use a safe pattern but unsafe is easier to implement or more ergonomic}'' in their response to Question~\ref{survey:wuq1} of the survey.}
+
+\begin{protocol}
+\item \label{survey:wueq1} \internote{select all} Which of the following \unsafe features have you used because it was easier to implement or more ergonomic than a safe alternative?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(17)} - \textit{mem::transmute}
+\item \texttt{(13)} - \textit{Calling unsafe functions written in Rust}
+\item \texttt{(13)} - \textit{Dereferencing a raw pointer}
+\item \texttt{(10)} - \textit{Calling foreign functions}
+\item \texttt{(10)} - \textit{Mutable static variables}
+\item \texttt{(\space 9)} - \textit{Pointer arithmetic}
+\item \texttt{(\space 6)} - \textit{Implementing an unsafe trait}
+\item \texttt{(\space 6)} - \textit{Manual memory allocation}
+\item \texttt{(\space 5)} - \textit{In-place initialization or updates}
+\item \texttt{(5)} - \textit{Self-referential structs}
+\item \texttt{(4)} - \textit{Declaring an unsafe trait}
+\item \texttt{(4)} - \textit{Implementing a custom allocator}
+\item \texttt{(3)} - \textit{Accessing the fields of a union type}
+\item \texttt{(3)} - \textit{Intrinsics}
+\item \texttt{(3)} - \textit{System calls}
+\item \texttt{(2)} - \textit{Cyclic aliasing patterns}
+\item \texttt{(2)} - \textit{Global assembly}
+\item \texttt{(2)} - \textit{Inline assembly}
+\item \texttt{(0)} - \textit{Other}
+\end{itemize}
+\end{multicols}
+\end{protocol}
+
+\noindent \textit{This question was only shown to respondents if they had selected any of the following types in their response to Question~\ref{survey:ufq2} of the survey.}
+\begin{protocol}
+\setcounter{protocoli}{1}
+\item \label{survey:wueq2} \internote{select all} Which of the following Rust types have you used because it was easier to implement or more ergonomic than a safe alternative?
+\begin{itemize}
+\item \texttt{(10)} - \textit{ManuallyDrop}
+\item \texttt{(10)} - \textit{MaybeUninit}
+\item \texttt{(\space 7)} - \textit{UnsafeCell}
+\item \texttt{(\space 1)} - \textit{Other}
+\end{itemize}
+\end{protocol}
+
+\subsection{Why unsafe? - Performance}
+\label{survey:sec:wupq}
+\textit{This section was only shown to respondents if they had selected ``\textit{I could use a safe pattern but unsafe is easier to implement or more ergonomic}'' in their response to Question~\ref{survey:wuq1} of the survey.}
+\begin{protocol}
+\item \label{survey:wupq1} \internote{select all} Which of the following unsafe features have you used because it performed faster or was more space-efficient than a safe alternative?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(41)} - \textit{mem::transmute}
+\item \texttt{(40)} - \textit{Calling unsafe functions written in Rust}
+\item \texttt{(40)} - \textit{Dereferencing a raw pointer}
+\item \texttt{(31)} - \textit{In-place initialization or updates}
+\item \texttt{(27)} - \textit{Pointer arithmetic}
+\item \texttt{(20)} - \textit{Intrinsics}
+\item \texttt{(19)} - \textit{Manual memory allocation}
+\item \texttt{(18)} - \textit{Inline assembly}
+\item \texttt{(16)} - \textit{Calling foreign functions}
+\item \texttt{(16)} - \textit{Mutable static variables}
+\item \texttt{(16)} - \textit{Self-referential structs}
+\item \texttt{(15)} - \textit{Implementing an unsafe trait}
+\item \texttt{(13)} - \textit{Accessing the fields of a union type}
+\item \texttt{(10)} - \textit{Declaring an unsafe trait}
+\item \texttt{(\space 9)} - \textit{Implementing a custom allocator}
+\item \texttt{(\space 8)} - \textit{Cyclic aliasing patterns}
+\item \texttt{(\space 8)} - \textit{System calls}
+\item \texttt{(\space 4)} - \textit{Global assembly}
+\item \texttt{(\space 2)} - \textit{Other}
+\end{itemize}
+\end{multicols}
+\end{protocol}
+
+\noindent \textit{The next question was only shown to respondents if they had selected any of the following types in their response to Question~\ref{survey:ufq2} of the survey.}
+\begin{protocol}
+\setcounter{protocoli}{1}
+\item \label{survey:wupq2} \internote{select all} Which of the following Rust types have you used because it performed faster or was more space efficient than a safe alternative?
+\begin{itemize}
+\item \texttt{(46)} - \textit{MaybeUninit}
+\item \texttt{(22)} - \textit{UnsafeCell}
+\item \texttt{(18)} - \textit{ManuallyDrop}
+\item \texttt{(\space 2)} - \textit{Other}
+\end{itemize}
+
+\item \label{survey:wupq3} \internote{select one} When you choose to use unsafe because it performs faster or is more space efficient, how often do you measure the difference?
+\begin{itemize}
+\item \texttt{(\space 8)} - \textit{Never}
+\item \texttt{(19)} - \textit{Sometimes}
+\item \texttt{(14)} - \textit{About half the time}
+\item \texttt{(16)} - \textit{Most of the time}
+\item \texttt{(19)} - \textit{Always}
+\end{itemize}
+\item \label{survey:wupq4} \internote{select one} When you use unsafe because it performs faster or is more space efficient, are you typically introducing small-scale optimizations into existing applications, or are you designing large-scale abstractions that are purpose-built for performance?
+\begin{itemize}
+\item \texttt{(32)} - \textit{Both}
+\item \texttt{(20)} - \textit{Small-scale optimizations}
+\item \texttt{(15)} - \textit{Large-scale components purpose-built for performance.}
+\item \texttt{(\space 5)} - \textit{Unsure}
+\item \texttt{(\space 4)} - \textit{Other}
+\end{itemize}
+\end{protocol}
+
+\subsection{Performance VS Safety}
+\label{survey:sec:pvsq}
+
+\begin{protocol}
+\item \label{survey:pvsq1} \internote{select one} You are writing an arbitrary Rust application, and you have the opportunity to increase its speed or space-efficiency using unsafe code. You are certain that the unsafe code is sound, and your test cases pass Miri, but the performance increase is marginal. Which would you choose:
+\begin{itemize}
+\item \texttt{(110)} - \textit{Use safe}
+\item \texttt{(\space 28)} - \textit{Unsure}
+\item \texttt{(\space 22)} - \textit{Use unsafe}
+\end{itemize}
+\end{protocol}
+
+\noindent \textit{The next question was only shown to participants if they had answered ``\textit{Yes}'' to either Question~\ref{survey:dmq3} or Question~\ref{survey:dmq4}.}
+\begin{protocol}
+\setcounter{protocoli}{1}
+\item \label{survey:pvsq2} \internote{select one} You are writing a Rust crate and you have the opportunity to increase its speed or space-efficiency using unsafe code. You are certain that the unsafe code is sound, and your test cases pass Miri, but the performance increase is marginal. Which would you choose:
+\begin{itemize}
+\item \texttt{(104)} - \textit{Use safe}
+\item \texttt{(\space 21)} - \textit{Unsure}
+\item \texttt{(\space 19)} - \textit{Use unsafe}
+\end{itemize}
+\end{protocol}
+
+\subsection{Local Minimal Unsafe}
+\label{survey:sec:lmuq}
+
+\begin{protocol}
+\item \label{survey:lmuq1} \internote{select one} If another Rust developer at your skill level selected a random \unsafe block or function from code that you have written, would it be easy or difficult for them to understand?
+\begin{itemize}
+\item \texttt{(\space 2)} - \textit{Extremely difficult}
+\item \texttt{(22)} - \textit{Somewhat difficult}
+\item \texttt{(38)} - \textit{Neither easy nor difficult}
+\item \texttt{(82)} - \textit{Somewhat easy}
+\item \texttt{(16)} - \textit{Extremely easy}
+\end{itemize}
+\item \label{survey:lmuq2} \internote{select all} Select each of the following features or attributes  that you have chosen to enable in a Rust module.
+\begin{itemize}
+\item \texttt{(47)} - \textit{unsafe\_block\_in\_unsafe\_fn}
+\item \texttt{(38)} - \textit{forbid(unsafe\_code)}
+\item \texttt{(37)} - \textit{deny(unsafe\_code)}
+\item \texttt{(\space 8)} - \textit{allow(improper\_ctypes)}
+\item \texttt{(\space 4)} - \textit{const\_raw\_ptr\_deref}
+\item \texttt{(\space 2)} - \textit{allow(improper\_ctypes\_definitions)}
+\end{itemize}
+\item \label{survey:lmuq3} \internote{select one} How often do you refactor Rust applications to remove unsafe code?
+\begin{itemize}
+\item \texttt{(\space 40)} - \textit{Never}
+\item \texttt{(101)} - \textit{Sometimes}
+\item \texttt{(\space 10)} - \textit{About half the time}
+\item \texttt{(\space \space 8)} - \textit{Most of the time}
+\item \texttt{(\space \space 1)} - \textit{Always}
+\end{itemize}
+\item \label{survey:lmuq4} \internote{select one} How often do you choose to avoid using an unsafe API when a safe alternative exists?
+\begin{itemize}
+\item \texttt{(\space 2)} - \textit{Never}
+\item \texttt{(14)} - \textit{Sometimes}
+\item \texttt{(12)} - \textit{About half the time}
+\item \texttt{(98)} - \textit{Most of the time}
+\item \texttt{(34)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\subsection{Encapsulation}
+\label{survey:sec:enq}
+
+\begin{protocol}
+\item \label{survey:enq1} Have you exposed an unsafe API to other Rust developers?
+\begin{itemize}
+\item \texttt{(69)} - \textit{Yes}
+\item \texttt{(91)} - \textit{No}
+\end{itemize}
+\item \label{survey:enq2} Have you exposed a safe API to other Rust developers that encapsulates unsafe code?
+\begin{itemize}
+\item \texttt{(141)} - \textit{Yes}
+\item \texttt{(\space 19)} - \textit{No}
+\end{itemize}
+\end{protocol}
+
+\subsection{Encapsulation - Unsafe API}
+\label{survey:sec:euaq}
+\textit{This section was only shown to respondents if they had selected ``\textit{Yes}'' in their response to Question~\ref{survey:enq1}.}
+
+\begin{protocol}
+\item \label{survey:euaq1} \internote{select all} Which of the following reasons have motivated you to expose an unsafe API to users?
+\begin{itemize}
+\item \texttt{(51)} - \textit{Impossible to encapsulate without imposing safety requirements on the user}
+\item \texttt{(34)} - \textit{To provide a more performant equivalent of a safe API}
+\item \texttt{(\space 9)} - \textit{To provide a more ergonomic equivalent of a safe API}
+\item \texttt{(\space 5)} - \textit{Other}
+\end{itemize}
+\item \label{survey:euaq2} \internote{select one} When you expose an unsafe API, how often are its users responsible for meeting certain requirements for correctness and safety?
+\begin{itemize}
+\item \texttt{(\space 1)} - \textit{Never}
+\item \texttt{(\space 3)} - \textit{Sometimes}
+\item \texttt{(\space 1)} - \textit{Unsure}
+\item \texttt{(\space 4)} - \textit{About half the time}
+\item \texttt{(18)} - \textit{Most of the time}
+\item \texttt{(42)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\subsection{Encapsulation - Unsafe API - Invariants}
+\label{survey:sec:euaiq}
+\textit{Questions in this section were only shown to respondents if they had not selected ``\textit{Never}'' in their response to Question~\ref{survey:euaq2}.}
+
+\begin{protocol}
+\item \label{survey:euaiq1} \internote{select one} When you expose an unsafe API to users, and it is their responsibility to ensure that certain requirements are met, how often do you document these requirements?
+\begin{itemize}
+\item \texttt{(\space 0)} - \textit{Never}
+\item \texttt{(\space 2)} - \textit{Sometimes}
+\item \texttt{(\space 5)} - \textit{About half the time}
+\item \texttt{(\space 8)} - \textit{Most of the time}
+\item \texttt{(53)} - \textit{Always}
+
+\end{itemize}
+\item \label{survey:euaiq2} \internote{select one} When you expose an unsafe API to other users, and it is their responsibility to ensure that certain requirements are met, how often do you include runtime checks for these requirements?
+\begin{itemize}
+\item \texttt{(11)} - \textit{Never}
+\item \texttt{(37)} - \textit{Sometimes}
+\item \texttt{(\space 8)} - \textit{About half the time}
+\item \texttt{(10)} - \textit{Most of the time}
+\item \texttt{(\space 2)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\subsection{Encapsulation - Safe API}
+\label{survey:sec:esaq}
+\textit{This section was only shown to respondents if they had selected ``\textit{Yes}'' in their response to Question~\ref{survey:enq2}.}
+
+\begin{protocol}
+\item \label{survey:esaq1} \internote{select one} When you expose a safe API for unsafe code, how often do you include runtime checks to ensure that its requirements for correctness and safety are met?
+\begin{itemize}
+\item \texttt{(11)} - \textit{Never}
+\item \texttt{(30)} - \textit{Sometimes}
+\item \texttt{(18)} - \textit{About half the time}
+\item \texttt{(47)} - \textit{Most of the time}
+\item \texttt{(35)} - \textit{Always}
+\end{itemize}
+\item \label{survey:esaq2} \internote{select one} When you expose a safe API for unsafe code, how often are all of its requirements for correctness and safety satisfied by the properties of Rust's type system?
+\begin{itemize}
+\item \texttt{(\space 1)} - \textit{Never}
+\item \texttt{(25)} - \textit{Sometimes}
+\item \texttt{(11)} - \textit{Unsure}
+\item \texttt{(16)} - \textit{About half the time}
+\item \texttt{(55)} - \textit{Most of the time}
+\item \texttt{(33)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\subsection{FFI - Background}
+\label{survey:sec:ffibq}
+\textit{This section was only shown to respondents if they had selected ``\textit{Calling foreign functions}'' in their response to Question~\ref{survey:ufq2}.}
+
+\begin{protocol}
+\item \label{survey:ffibq1} \internote{select all} When you call foreign functions from Rust or write Rust bindings to foreign functions, which languages are these functions written in?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(101)} - \textit{C}
+\item \texttt{(\space 64)} - \textit{C++}
+\item \texttt{(\space 24)} - \textit{Assembly}
+\item \texttt{(\space 19)} - \textit{Python}
+\item \texttt{(\space 15)} - \textit{JavaScript}
+\item \texttt{(\space 12)} - \textit{Other}
+\item \texttt{(\space 10)} - \textit{TypeScript}
+\item \texttt{(\space \space 8)} - \textit{Java}
+\item \texttt{(4)} - \textit{Go}
+\item \texttt{(4)} - \textit{Swift}
+\item \texttt{(3)} - \textit{C\#}
+\item \texttt{(3)} - \textit{Dart}
+\item \texttt{(1)} - \textit{Haskell}
+\item \texttt{(1)} - \textit{OCaml}
+\item \texttt{(1)} - \textit{Ruby}
+\item \texttt{(0)} - \textit{Erlang}
+\item \texttt{(0)} - \textit{Futhark}
+\item \texttt{(0)} - \textit{Julia}
+\end{itemize}
+\end{multicols}
+\item \label{survey:ffibq2} \internote{select one} Do you write or generate bindings to foreign functions?
+\begin{itemize}
+\item \texttt{(60)} - \textit{I write bindings manually and generate bindings using a tool}
+\item \texttt{(29)} - \textit{I generate bindings using a tool}
+\item \texttt{(15)} - \textit{I write bindings manually}
+\item \texttt{(\space 8)} - \textit{I do not write or generate bindings}
+\end{itemize}
+\item \label{survey:ffibq3} \internote{select one} Do you trust FFI bindings that are written by hand?
+\begin{itemize}
+\item \texttt{(\space 3)} - \textit{Definitely not}
+\item \texttt{(\space 5)} - \textit{Probably not}
+\item \texttt{(54)} - \textit{Might or might not}
+\item \texttt{(40)} - \textit{Probably yes}
+\item \texttt{(10)} - \textit{Definitely yes}
+\end{itemize}
+\item \label{survey:ffibq4} \internote{select one} Do you trust FFI bindings that are generated by a tool?
+\begin{itemize}
+\item \texttt{(\space 0)} - \textit{Definitely not}
+
+\item \texttt{(\space 2)} - \textit{Probably not}
+\item \texttt{(22)} - \textit{Might or might not}
+\item \texttt{(68)} - \textit{Probably yes}
+\item \texttt{(20)} - \textit{Definitely yes}
+\end{itemize}
+\item \label{survey:ffibq5} \internote{select one} Have you ever encountered incorrect FFI bindings in a Rust application?
+\begin{itemize}
+\item \texttt{(48)} - \textit{No}
+\item \texttt{(39)} - \textit{Yes}
+\item \texttt{(25)} - \textit{Unsure}
+\end{itemize}
+\end{protocol}
+
+\noindent \textit{This question was only shown to respondents if they had selected ``\textit{Yes}'' to the previous question.}
+\begin{protocol}
+\setcounter{protocoli}{5}
+\item \label{survey:ffibq6} \internote{select one} Have these incorrect bindings typically been written manually, generated by a tool, or both?
+\begin{itemize}
+\item \texttt{(14)} - \textit{Both}
+\item \texttt{(13)} - \textit{Written manually}
+\item \texttt{(\space 5)} - \textit{Generated by a tool}
+\item \texttt{(\space 7)} - \textit{Unsure}
+\end{itemize}
+\end{protocol}
+
+\subsection{FFI - Memory Model}
+\label{survey:sec:ffimmq}
+\textit{This section was only shown to respondents if they had selected ``\textit{Calling foreign functions}'' in their response to Question~\ref{survey:ufq2}.}
+\vskip 0.5em
+\noindent\textit{The next question was only shown to respondents if they had selected ``\code{Box}'', ``\code{Arc}'', or ``\code{Rc}'' in their response to Question~\ref{survey:ufq1}.}
+
+\begin{protocol}
+\item \label{survey:ffimmq1} \internote{select all} Select each of the following memory container types that you have used to allocate memory for a foreign function call. This process includes creating the container, exposing it as a raw pointer using \code{into\_raw()}, and then passing it into a foreign function.
+\begin{itemize}
+\item \texttt{(58)} - \textit{Box}
+\item \texttt{(17)} - \textit{Arc}
+\item \texttt{(\space 9)} - \textit{Other}
+\item \texttt{(\space 5)} - \textit{Rc}
+\end{itemize}
+\item \label{survey:ffimmq3} \internote{select one} When you receive a raw pointer to memory allocated by an FFI call, how often do you store it as an \code{UnsafeCell}?
+\begin{itemize}
+\item \texttt{(72)} - \textit{Never}
+\item \texttt{(25)} - \textit{Sometimes}
+\item \texttt{(11)} - \textit{Most of the time}
+\item \texttt{(\space 4)} - \textit{About half the time}
+\item \texttt{(\space 0)} - \textit{Always}
+\end{itemize}
+\item \label{survey:ffimmq4} \internote{select one} Do you pass Rust's abstract data types (structs, enums) by value across FFI boundaries?
+\begin{itemize}
+\item \texttt{(65)} - \textit{No}
+\item \texttt{(31)} - \textit{Yes}
+\item \texttt{(16)} - \textit{Unsure}
+\end{itemize}
+\item \label{survey:ffimmq5} \internote{select one} Do you convert raw pointers to memory allocated by FFI calls into safe references, such as \code{\&T} or \code{\&mut T}?
+\begin{itemize}
+\item \texttt{(32)} - \textit{No}
+\item \texttt{(65)} - \textit{Yes}
+\item \texttt{(15)} - \textit{Unsure}
+\end{itemize}
+\item \label{survey:ffimmq6} \internote{select one} How often do you intentionally avoid passing Rust's abstract data types (structs, enums) by value across FFI boundaries?
+\begin{itemize}
+\item \texttt{(\space 5)} - \textit{Never}
+\item \texttt{(22)} - \textit{Sometimes}
+\item \texttt{(22)} - \textit{Unsure}
+\item \texttt{(\space 8)} - \textit{About half the time}
+\item \texttt{(31)} - \textit{Most of the time}
+\item \texttt{(24)} - \textit{Always}
+\end{itemize}
+
+\item \label{survey:ffimmq7} \internote{select one} How often do you intentionally avoid converting raw pointers to memory allocated by FFI calls into safe references, such as \code{\&T} or \code{\&mut T}?
+\begin{itemize}
+\item \texttt{(\space 8)} - \textit{Never}
+\item \texttt{(40)} - \textit{Sometimes}
+\item \texttt{(26)} - \textit{Unsure}
+\item \texttt{(12)} - \textit{About half the time}
+\item \texttt{(14)} - \textit{Most of the time}
+\item \texttt{(12)} - \textit{Always}
+\end{itemize}
+\end{protocol}
+
+\subsection{FFI - Bindings - Automation}
+\label{survey:sec:ffibaq}
+\textit{This section was only shown to respondents if they had selected ``\textit{I generate bindings using a tool}'' or ``I write bindings manually and generate bindings using a tool'' in their response to Question~\ref{survey:ffibq2}.}
+
+\begin{protocol}
+\item \label{survey:ffibaq1} \internote{select all} Which of the following binding generation tools have you used?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(71)} - \textit{bindgen}
+\item \texttt{(42)} - \textit{wasm-bindgen}
+\item \texttt{(37)} - \textit{cbindgen}
+\item \texttt{(35)} - \textit{PyO3}
+\item \texttt{(29)} - \textit{CXX}
+\item \texttt{(11)} - \textit{Emscripten}
+\item \texttt{(10)} - \textit{Other}
+\item \texttt{(\space 1)} - \textit{Diplomat}
+\item \texttt{(\space 1)} - \textit{UniFFI}
+\end{itemize}
+\end{multicols}
+\end{protocol}
+
+\noindent \textit{The next question was only shown to participants if they had selected ``\textit{bindgen}'' in their response to Question~\ref{survey:ffibaq1}}
+\begin{protocol}
+\setcounter{protocoli}{1}
+\item \label{survey:ffibaq2} \internote{select one} Do you typically generate bindings locally and check them in, or do you generate them as a CI step? (\textit{we only have partial data for this question; it was added after the survey began in response to community feedback}).
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(36)} - \textit{Locally}
+\item \texttt{(12)} - \textit{Other}
+\item \texttt{(8)} - \textit{In CI}
+\end{itemize}
+\end{multicols}
+\end{protocol}
+
+\noindent \textit{The next question was only shown to participants if they had selected ``\textit{wasm-bindgen}'' in their response to Question~\ref{survey:ffibaq1}}
+\begin{protocol}
+\setcounter{protocoli}{2}
+\item \label{survey:ffibaq3} \internote{select one} Has it typically been difficult or easy to configure wasm-bindgen?
+\begin{itemize}
+\item \texttt{(\space 1)} - \textit{Extremely difficult}
+\item \texttt{(\space 7)} - \textit{Somewhat difficult}
+\item \texttt{(12)} - \textit{Neither easy nor difficult}
+\item \texttt{(18)} - \textit{Somewhat easy}
+\item \texttt{(\space 4)} - \textit{Extremely easy}
+\end{itemize}
+\end{protocol}
+
+\subsection{Validation}
+\label{survey:sec:vq}
+\begin{protocol}
+\item \label{survey:vq1} \internote{select all} Which of the following formal methods tools have you used with Rust?
+\begin{itemize}
+\item \texttt{(5)} - \textit{Kani}
+\item \texttt{(3)} - \textit{Creusot}
+\item \texttt{(3)} - \textit{Prusti}
+\item \texttt{(1)} - \textit{Flux}
+\item \texttt{(0)} - \textit{Verus}
+\item \texttt{(1)} - \textit{Other}
+\end{itemize}
+\item \label{survey:vq2} \internote{select all} Which of the following sanitizers, fuzzers, and dynamic analysis tools have you used for Rust applications?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(98)} - \textit{Miri}
+\item \texttt{(70)} - \textit{Valgrind}
+\item \texttt{(42)} - \textit{cargo fuzz}
+\item \texttt{(41)} - \textit{AddressSanitizer (ASAN)}
+\item \texttt{(21)} - \textit{ThreadSanitizer (TSAN)}
+\item \texttt{(20)} - \textit{UndefinedBehaviorSanitizer (UBSAN)}
+\item \texttt{(17)} - \textit{libFuzzer}
+\item \texttt{(14)} - \textit{LeakSanitizer (LSAN)}
+\item \texttt{(14)} - \textit{Loom}
+\item \texttt{(12)} - \textit{MemorySanitizer (MSAN)}
+\item \texttt{(\space 4)} - \textit{Other}
+\item \texttt{(\space 2)} - \textit{Shuttle}
+\item \texttt{(\space 1)} - \textit{HWAddressSanitizer (HWASAN)}
+\item \texttt{(\space 0)} - \textit{MemTagSanitizer}
+\item \texttt{(\space 0)} - \textit{KernelControlFlowIntegrity}
+\item \texttt{(\space 0)} - \textit{ShadowCallStack}
+
+\end{itemize}
+\end{multicols}
+\item \label{survey:vq4} \internote{select one} How frequently do you use a debugger with a Rust application?
+\begin{itemize}
+\item \texttt{(22)} - \textit{Never}
+\item \texttt{(24)} - \textit{Less than once a year}
+\item \texttt{(24)} - \textit{Yearly}
+\item \texttt{(46)} - \textit{Monthly}
+\item \texttt{(28)} - \textit{Weekly}
+\item \texttt{(16)} - \textit{Daily}
+\end{itemize}
+\item \label{survey:vq5} \internote{select all} Which of the following types of bugs and undefined behaviors have you encountered in a Rust application and were caused by unsafe code?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(67)} - \textit{Out-of-bounds access}
+\item \texttt{(54)} - \textit{Using uninitialized memory}
+\item \texttt{(50)} - \textit{Null pointer dereference}
+\item \texttt{(49)} - \textit{Memory leak}
+\item \texttt{(49)} - \textit{Use after free}
+\item \texttt{(43)} - \textit{Unaligned memory access}
+\item \texttt{(40)} - \textit{Violation of stacked or tree borrows}
+\item \texttt{(34)} - \textit{Double free}
+\item \texttt{(31)} - \textit{Incorrectly declared bindings to intrinsics or foreign functions.}
+\item \texttt{(27)} - \textit{External runtime or hardware interface does not behave according to its written specification.}
+\item \texttt{(20)} - \textit{Failure to meet an application's functional requirements.}
+\item \texttt{(20)} - \textit{Unwinding across foreign stack frames without using an -unwind ABI}
+\item \texttt{(16)} - \textit{Integer overflow}
+\item \texttt{(14)} - \textit{Deallocating memory with an incorrect Layout}
+\item \texttt{(10)} - \textit{Other}
+\item \texttt{(\space 7)} - \textit{Creating a zero-size allocation with an allocator that requires nonzero size}
+\end{itemize}
+\end{multicols}
+\item \label{survey:vq6} \internote{select one} How often do you write tests for Rust applications that use unsafe?
+\begin{itemize}
+\item \texttt{(\space 9)} - \textit{Never}
+\item \texttt{(39)} - \textit{Sometimes}
+\item \texttt{(15)} - \textit{About half the time}
+\item \texttt{(46)} - \textit{Most of the time}
+\item \texttt{(51)} - \textit{Always}
+\end{itemize}
+\item \label{survey:vq7} \internote{select one} How often do you audit your dependencies' use of unsafe?
+\begin{itemize}
+\item \texttt{(77)} - \textit{Never}
+\item \texttt{(64)} - \textit{Sometimes}
+\item \texttt{(\space 9)} - \textit{About half the time}
+\item \texttt{(\space 7)} - \textit{Most of the time}
+\item \texttt{(\space 3)} - \textit{Always}
+\end{itemize}
+\item \label{survey:vq8} \internote{select one} Select each of the following tools that you use to audit your dependencies.
+\begin{itemize}
+\item \texttt{(51)} - \textit{cargo-audit}
+\item \texttt{(34)} - \textit{cargo-update}
+\item \texttt{(25)} - \textit{cargo-deny}
+\item \texttt{(18)} - \textit{cargo-geiger}
+\item \texttt{(\space 6)} - \textit{cargo-vet}
+\end{itemize}
+\item \label{survey:vq9} \internote{select one} One of your options for a dependency has an unsafe API. Are you likely or unlikely to avoid choosing this dependency if other options have a safe API?
+\begin{itemize}
+\item \texttt{(\space 9)} - \textit{Extremely unlikely}
+\item \texttt{(20)} - \textit{Somewhat unlikely}
+\item \texttt{(52)} - \textit{Neither likely nor unlikely}
+\item \texttt{(51)} - \textit{Somewhat likely}
+\item \texttt{(28)} - \textit{Extremely likely}
+\end{itemize}
+\end{protocol}
+
+\subsection{Validation - Miri}
+\label{survey:sec:vmq}
+\textit{Questions in this section were only shown to participants if they had selected ``\textit{Miri}'' in their response to Question~\ref{survey:vq2}.}
+
+\begin{protocol}
+\item \label{survey:vmq1} \internote{select all} Which of the following issues have deterred you from using Miri to test a Rust application?
+\begin{itemize}
+\item \texttt{(42)} - \textit{Lack of support for foreign function calls}
+\item \texttt{(25)} - \textit{Slow performance}
+\item \texttt{(19)} - \textit{Lack of support for inline assembly}
+\item \texttt{(\space 9)} - \textit{Other}
+\item \texttt{(\space 4)} - \textit{My unsafe code is in violation of Stacked Borrows}
+\item \texttt{(\space 3)} - \textit{My unsafe code is in violation of Tree Borrows}
+\end{itemize}
+\item \label{survey:vmq2} \internote{select one} How often do you run test cases in Miri?
+\begin{itemize}
+\item \texttt{(13)} - \textit{Never}
+\item \texttt{(42)} - \textit{Sometimes}
+\item \texttt{(\space 6)} - \textit{About half the time}
+\item \texttt{(24)} - \textit{Most of the time}
+\item \texttt{(13)} - \textit{Always}
+\end{itemize}
+\item \label{survey:vmq3} \internote{select all} Which of the following bugs has Miri detected in applications that you have contributed to?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(41)} - \textit{Stacked Borrows Violation}
+\item \texttt{(32)} - \textit{Using uninitialized memory}
+\item \texttt{(24)} - \textit{Unaligned memory access}
+\item \texttt{(24)} - \textit{Use-after-free}
+\item \texttt{(23)} - \textit{Out-of-bounds access}
+\item \texttt{(19)} - \textit{Memory leak}
+\item \texttt{(16)} - \textit{Tree Borrows Violation}
+\item \texttt{(15)} - \textit{Data race}
+\item \texttt{(15)} - \textit{Null pointer dereference}
+\item \texttt{(\space 5)} - \textit{Other}
+\end{itemize}
+\end{multicols}
+\end{protocol}
+
+\noindent\textit{The next question was only shown to participants if they had selected either ``\textit{Stacked Borrows Violation}'' or ``\textit{Tree Borrows Violation}'' in their answer to Question~\ref{survey:vmq3}.}
+\begin{protocol}
+\setcounter{protocoli}{3}
+\item \label{survey:vmq4} \internote{select one} When Miri detects a borrowing violation in your code, has it usually been easy or difficult to fix?
+\begin{itemize}
+\item \texttt{(\space 3)} - \textit{Extremely difficult}
+\item \texttt{(15)} - \textit{Somewhat difficult}
+\item \texttt{(11)} - \textit{Neither easy nor difficult}
+\item \texttt{(11)} - \textit{Somewhat easy}
+\item \texttt{(\space 5)} - \textit{Extremely easy}
+\end{itemize}
+\end{protocol}
+
+\subsection{Community and Culture}
+\label{survey:sec:ccq}
+
+\begin{protocol}
+\item \label{survey:ccq1} \internote{select all} Select each of the following online communities where you have posted asking for advice related to either undefined behavior or the correct use of unsafe code.
+\begin{itemize}
+\item \texttt{(35)} - \textit{GitHub}
+\item \texttt{(35)} - \textit{The Rust Community Discord}
+\item \texttt{(32)} - \textit{The Rust Programming Language Forums}
+\item \texttt{(30)} - \textit{Reddit (/r/rust)}
+\item \texttt{(11)} - \textit{Other}
+\end{itemize}
+\item \label{survey:ccq2} \internote{select one} How do you perceive that the Rust community views unsafe code in general?
+\begin{itemize}
+\item \texttt{(11)} - \textit{Extremely negatively}
+\item \texttt{(92)} - \textit{Somewhat negatively}
+\item \texttt{(43)} - \textit{Neither positively nor negatively}
+\item \texttt{(\space 7)} - \textit{Unsure}
+\item \texttt{(\space 5)} - \textit{Somewhat positively}
+\item \texttt{(\space 2)} - \textit{Extremely positively}
+\end{itemize}
+\item \label{survey:ccq3} \internote{select one} How do you perceive that the Rust community views the type of unsafe code that you write?
+\begin{itemize}
+\item \texttt{(\space 4)} - \textit{Extremely negatively}
+\item \texttt{(22)} - \textit{Somewhat negatively}
+\item \texttt{(49)} - \textit{Neither positively nor negatively}
+\item \texttt{(60)} - \textit{Unsure}
+\item \texttt{(23)} - \textit{Somewhat positively}
+\item \texttt{(\space 2)} - \textit{Extremely positively}
+\end{itemize}
+\item \label{survey:ccq4} \internote{select one} How often is the Rust community’s guidance and documentation adequate for you to know how to use unsafe correctly?
+\begin{itemize}
+\item \texttt{(\space \space 1)} - \textit{Never}
+\item \texttt{(\space 24)} - \textit{Sometimes}
+\item \texttt{(\space 12)} - \textit{Unsure}
+\item \texttt{(\space 11)} - \textit{About half the time}
+\item \texttt{(102)} - \textit{Most of the time}
+\item \texttt{(\space 10)} - \textit{Always}
+\end{itemize}
+\item \label{survey:ccq5} \internote{select one} Do you agree or disagree with the following statement:"No documentation is better than incorrect documentation."
+\begin{itemize}
+\item \texttt{(\space 8)} - \textit{Strongly disagree}
+\item \texttt{(19)} - \textit{Somewhat disagree}
+\item \texttt{(23)} - \textit{Neither agree nor disagree}
+\item \texttt{(61)} - \textit{Somewhat agree}
+\item \texttt{(49)} - \textit{Strongly agree}
+\end{itemize}
+\end{protocol}
+
+\subsection{Demographics}
+\label{survey:sec:dq}
+
+\begin{protocol}
+\item \label{survey:dq1} \internote{select one} What is your age?
+\begin{itemize}
+\item \texttt{(90)} - \textit{18-29}
+\item \texttt{(43)} - \textit{30-39}
+\item \texttt{(15)} - \textit{40-49}
+\item \texttt{(\space 7)} - \textit{50-59}
+\item \texttt{(\space 0)} - \textit{60-69}
+\item \texttt{(\space 0)} - \textit{Over 70}
+\item \texttt{(\space 5)} - \textit{Prefer not to answer}
+\end{itemize}
+\item \label{survey:dq2} \internote{select one} What is your highest completed level of education?
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{(\space 8)} - \textit{Some high school}
+\item \texttt{(17)} - \textit{High school diploma/GED}
+\item \texttt{(26)} - \textit{Some college}
+\item \texttt{(57)} - \textit{Bachelor's degree}
+\item \texttt{(34)} - \textit{Master's degree}
+\item \texttt{(14)} - \textit{PhD}
+\item \texttt{(\space 4)} - \textit{Prefer not to answer}
+\end{itemize}
+\end{multicols}
+\item \label{survey:dq3} \internote{select all} What is your gender?
+\begin{itemize}
+\item \texttt{(131)} - \textit{Man}
+\item \texttt{(\space 10)} - \textit{Non-binary}
+\item \texttt{(\space \space 4)} - \textit{Woman}
+\item \texttt{(\space 15)} - \textit{Prefer not to disclose}
+\end{itemize}
+\item \label{survey:dq4} \internote{select one} Select each of the affiliations that best describes your role as a Rust developer.
+\begin{itemize}
+\item \texttt{(\space 31)} - \textit{Academia}
+\item \texttt{(\space 91)} - \textit{Industry}
+\item \texttt{(115)} - \textit{Open-source contributor}
+\item \texttt{(\space \space 7)} - \textit{Rust project member}
+\item \texttt{(\space\space 0)} - \textit{Rust foundation member}
+\item \texttt{(\space \space 8)} - \textit{Other}
+\end{itemize}
+\item \label{survey:dq5} \internote{select all} Where did you first hear about this survey?
+\begin{itemize}
+\item \texttt{(83)} - \textit{Reddit (/r/rust)}
+\item \texttt{(52)} - \textit{"This Week in Rust"}
+\item \texttt{(16)} - \textit{The Rust Programming Language Forums}
+\item \texttt{(10)} - \textit{The Rust Programming Language Community Discord}
+\item \texttt{(\space 0)} - \textit{X}
+\item \texttt{(\space 3)} - \textit{Other}
+\end{itemize}
+\end{protocol}
+
+\subsection{Personal Information - Consent}
+\label{survey:sec:pic}
+\begin{protocol}
+\item \label{survey:picq1} \internote{yes/no} Do you wish to be entered into a drawing for a \$250 gift card to Amazon, Starbucks, or Target? To be eligible, you will need to provide a valid username from GitHub or the Rust Programming Language Forums and an email address. You account must have activity prior to the start date of the survey.
+\item \label{survey:picq2} \internote{yes/no} Are you open to being contacted for follow-up surveys or interviews?
+\item \label{survey:picq3} \internote{yes/no} Did you participate in our initial interview study this spring? 
+\end{protocol}
+
+\subsection{Personal Information - Connection}
+\label{survey:sec:picn}
+\textit{Questions in this section were only shown to respondents who had selected ``\textit{Yes}'' in their response to Question~\ref{survey:picq3}.}
+\begin{protocol}
+\item \label{survey:picnq1} \internote{yes/no} Would you be open to providing your name and email address so that we can associate your responses to this survey with your data from the interview study? By selecting 'Yes,' you consent to be contacted for clarification if the name and email address you provided do not match earlier data.
+\end{protocol}
+
+\subsection{Personal Information - Drawing}
+\label{survey:sec:pid}
+\textit{Questions in this section were only shown to participants if they had selected ``\textit{Yes}'' in their response to Question~\ref{survey:picq1}.}
+\vskip 0.5em
+\noindent The online profile that you provide will only be used to prevent multiple survey responses from being submitted by the same user. It will not be published.
+\begin{protocol}
+\item \internote{short answer} Copy and paste a link to your profile page on either GitHub or the Rust Programming Language Forums.
+\item \internote{select one} Which type of gift card would you prefer?
+\begin{itemize}
+\item \textit{Amazon}
+\item \textit{Starbucks}
+\item \textit{Target}
+\end{itemize}
+\end{protocol}
+
+\subsection{Personal Information - Email}
+\label{survey:sec:piem}
+\textit{Questions in this section were only shown to participants if they had selected ``\textit{Yes}'' in their response to Question~\ref{survey:picq1}, Question~\ref{survey:picq3}, or Question~\ref{survey:picnq1}.}
+
+\vskip 0.5em
+\noindent Your name and email are collected for the purpose of contacting you if you are eligible for compensation and are selected, if you consented to be contacted for follow-up surveys or interviews, or if you consented to associate your survey response with prior interview study data and the name and email you provide do not match what you previously provided. These identifiers will not be used for any other purposes and will not be published.
+\begin{protocol}
+\item \internote{short answer} What is your name?
+\item \internote{short answer} What is your email?
+\end{protocol}

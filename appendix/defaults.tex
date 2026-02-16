@@ -1,0 +1,179 @@
+\definecolor{UnsafePurple}{HTML}{674ea7}
+\newcommand{\unsafe}{\code{unsafe}\xspace}
+\newcommand{\code}[1]{{\color{UnsafePurple}\texttt{\textscale{1}{#1}}}}
+\newcommand{\qopt}{{$\star$}}
+\newcommand{\internote}[1]{{\textbf{[}} \textit{#1} {\textbf{]}}}
+\newcommand{\todonum}{{\color{red}[insert \#]}\xspace}
+\newcommand{\tododate}{{\color{red}[insert date]}\xspace}
+\newcommand{\tempdata}[1]{{\color{red}[#1]}\xspace}
+
+\newcommand{\rsq}[2]{\paragraph{\textbf{RQ}\textbf{#1} - \textit{#2}}}
+\newcommand{\CC}{C\texttt{++}}
+
+
+\newcommand{\ilcite}[1]{(\hyperref[table:participants]{P#1})}
+\NewDocumentEnvironment{pquote}{m}
+{
+\begin{quote}\itshape
+}
+{
+\noindent \null \hfill {\normalfont \ilcite{#1} }
+\end{quote}
+}
+
+\newcommand{\ilquote}[2]{``\textit{#1}''~\ilcite{#2}}
+
+\newcommand{\datanote}[1]{{\textit{[Note]: #1}}}
+
+
+
+
+\newcommand{\ArrayItemRounded}[1]{\FPeval{\thisitem}{round(clip(\ArrayItem{#1}),0)}\thisitem}
+
+
+\newcommand{\rsqone}{\rsq{1}{What do developers state as their motivations for using Rust?}}
+\newcommand{\rsqtwo}{\rsq{2}{What do Rust developers state as their motivations for using \unsafe code?}}
+\newcommand{\rsqthree}{\rsq{3}{How do Rust developers reason about encapsulating \unsafe code?}}
+\newcommand{\rsqfour}{\rsq{4}{How do Rust developers reason about memory safety across foreign boundaries?}}
+\newcommand{\rsqfive}{\rsq{5}{How do Rust developers validate \unsafe code?}}
+\newcommand{\rsqsix}{\rsq{6}{How is unsafe code perceived by the members of the Rust community who engage with it?}}
+
+\usepackage[nomessages]{fp}% http://ctan.org/pkg/fp
+
+\usepackage{xparse}
+\usepackage{xfp}
+\ExplSyntaxOn
+\ior_new:N \l__lrnv_temp_ior
+\str_new:N \l__lrnv_tmp_str
+\seq_new:N \l__lrnv_key_seq
+\seq_new:N \l__lrnv_value_seq
+\prop_new:N \l__lrnv_array_prop
+\cs_new_protected:Npn \__lrnv_csv_to_prop:n #1
+  {
+    \__lrnv_input_csv:n {#1}
+    \seq_mapthread_function:NNN \l__lrnv_key_seq \l__lrnv_value_seq
+      \__lrnv_set_prop:nn
+  }
+\cs_new_protected:Npn \__lrnv_set_prop:nn #1 #2
+  { \prop_put:Nnn \l__lrnv_array_prop {#1} {#2} }
+\cs_new_protected:Npn \__lrnv_input_csv:n #1
+  {
+    \ior_open:Nn \l__lrnv_temp_ior {#1}
+    \__lrnv_read_csv_row_to_seq:NN \l__lrnv_temp_ior \l__lrnv_key_seq
+    \__lrnv_read_csv_row_to_seq:NN \l__lrnv_temp_ior \l__lrnv_value_seq
+    \ior_close:N \l__lrnv_temp_ior
+  }
+\cs_new_protected:Npn \__lrnv_read_csv_row_to_seq:NN #1 #2
+  {
+    \ior_str_get:NN #1 \l__lrnv_tmp_str
+    \seq_set_from_clist:NV #2 \l__lrnv_tmp_str
+  }
+\cs_generate_variant:Nn \seq_set_from_clist:Nn { NV }
+\msg_new:nnn { lrnv } { file-not-found }
+  { File~`#1'~not~found. }
+\NewDocumentCommand \ReadCSVArray { m }
+  {
+    \file_if_exist:nTF {#1}
+      { \__lrnv_csv_to_prop:n {#1} }
+      { \msg_error:nnn { lrnv } { file-not-found } {#1} }
+  }
+\NewExpandableDocumentCommand \ArrayItem { m }
+  { \prop_item:Nn \l__lrnv_array_prop { "#1" } }
+\ExplSyntaxOff
+
+\newcommand{\m}[1]{\mathsf{#1}}
+\newcommand{\ttt}[1]{{\tt #1}}
+
+\newcommand{\clang}{\ttt{C}}
+\newcommand{\ccpp}{\clang/\cpp \ }
+
+
+
+
+\newlist{protocol}{enumerate}{10}
+\setlist[protocol]{label*={\arabic*.}, ref=\thesubsubsection.\arabic*}
+
+
+\newcommand{\ifyestxt}{if {\textbf{yes}}}
+\newcommand{\ifnotxt}{if {\color{BrickRed}\textbf{no}}}
+\newcommand{\ifyes}{\internote{\ifyestxt}}
+\newcommand{\ifno}{\internote{\ifnotxt}}
+\newcommand{\gotosec}[1]{go to {\textbf{\nameref{#1}}}}
+\newcommand{\nogo}[1]{\optgo{\ifnotxt}{#1}}
+\newcommand{\yesgo}[1]{\optgo{\ifyestxt}{#1}}
+\newcommand{\optgo}[2]{\internote{#1 then \gotosec{#2}}}
+
+
+
+\newenvironment{protocolcond}[1]{#1\begin{addmargin}[1em]{0em} \begin{protocol}}{\end{protocol}\end{addmargin}}
+
+\newcommand{\adjective}[1]{{\textit{#1}}}
+
+
+\newcommand{\periodic}[1]{
+\item \internote{select one} #1
+    \begin{itemize}
+    \item \textit{Daily}, \textit{Weekly}, \textit{Monthly}, \textit{Yearly}, \textit{Less than once a year}
+    \end{itemize}
+}
+\newcommand{\ease}[1]{
+\item \internote{select one} #1
+    \begin{itemize}
+    \item \textit{Extremely difficult}, \textit{Somewhat difficult}, \textit{Neither easy nor difficult}, \textit{Somewhat easy}, \textit{Extremely easy}
+    \end{itemize}
+}
+\newcommand{\frequency}[1]{
+\item \internote{select one} #1
+    \begin{itemize}
+    \item \textit{Never}, \textit{Sometimes}, \textit{About half the time}, \textit{Most of the time}, \textit{Always}
+    \end{itemize}
+}
+\newcommand{\frequencyunsure}[1]{
+\item \internote{select one} #1
+    \begin{itemize}
+    \item \textit{Unsure}, \textit{Never}, \textit{Sometimes}, \textit{About half the time}, \textit{Most of the time}, \textit{Always}
+    \end{itemize}
+}
+
+\newcommand{\yesno}[1]{
+\item \internote{select one} #1
+    \begin{itemize}
+    \item \textit{Definitely not}, \textit{Probably not}, \textit{Might or might not}, \textit{Probably yes}, \textit{Definitely yes}
+    \end{itemize}
+}
+
+\newcommand{\responsessplit}[2]{
+\vskip 0.5em
+\begin{minipage}[t]{0.5\textwidth}
+\begin{itemize}
+\raggedright
+#1
+\end{itemize}
+\end{minipage}\begin{minipage}[t]{0.5\textwidth}
+\begin{itemize}
+\raggedright
+#2
+\end{itemize}
+\end{minipage}
+\vskip 0.5em
+}
+
+
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{lscape}
+\usepackage{flafter} 
+\setlength{\multicolsep}{1.5pt plus .5pt minus .45pt}% 50% of original values
+\newenvironment{responsestwocol}[1]
+{
+\begin{multicols}{2}
+\itemize
+}
+{
+\enditemize
+\end{multicols}
+}
+\usepackage{float}
+
+\usepackage{placeins}
